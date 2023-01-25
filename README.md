@@ -6,6 +6,7 @@ A new Flutter project.
 
 Marc Santisteban Ruiz
 Joan Manel Ramirez Cuart
+Andres Muñoz Perez
 
 ## Getting Started
 
