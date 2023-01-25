@@ -5,6 +5,7 @@ A new Flutter project.
 ## Participantes
 
 Marc Santisteban Ruiz
+Joan Manel Ramirez Cuart
 
 ## Getting Started
 
