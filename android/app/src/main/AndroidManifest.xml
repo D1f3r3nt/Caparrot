@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.caparrot">
+    package="cat.paucasesnoves.caparrot">
    <application
         android:label="caparrot"
         android:name="${applicationName}"
