@@ -67,11 +67,28 @@ class _LoginPageState extends State<LoginPage> {
                         onSaved: (input) => _email = input!,
                         decoration: InputDecoration(
                           labelText: 'Email',
+                          labelStyle: TextStyle(
+                            color: Palete.black50,
+                            fontWeight: FontWeight.bold,
+                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
                           filled: true,
                           fillColor: Palete.white90,
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide(
+                                color: Palete.green70,
+                                width: 3,
+                                strokeAlign: StrokeAlign.center),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide(
+                                color: Palete.green50,
+                                strokeAlign: StrokeAlign.center),
+                          ),
                         ),
                       ),
                     ),
@@ -88,13 +105,28 @@ class _LoginPageState extends State<LoginPage> {
                         onSaved: (input) => _password = input!,
                         decoration: InputDecoration(
                           labelText: 'Contrasenya',
+                          labelStyle: TextStyle(
+                            color: Palete.black50,
+                            fontWeight: FontWeight.bold,
+                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
                           filled: true,
                           fillColor: Palete.white90,
-                          focusColor: Palete.green90,
-                          hoverColor: Palete.green90,
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide(
+                                color: Palete.green70,
+                                width: 3,
+                                strokeAlign: StrokeAlign.center),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide(
+                                color: Palete.green50,
+                                strokeAlign: StrokeAlign.center),
+                          ),
                         ),
                         obscureText: true,
                       ),
