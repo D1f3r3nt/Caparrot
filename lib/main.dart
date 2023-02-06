@@ -1,11 +1,17 @@
 import 'package:caparrot/routes/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() {
+void main() async {
   /* Para evitar que la pantalla se voltee */
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+  /*Para el auth*/
+  await Firebase.initializeApp();
+  await FirebaseAuth.instance;
 
   runApp(const MyApp());
 }
@@ -18,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Caparrots',
-      initialRoute: 'login',
+      initialRoute: '/',
       routes: getRoutes,
     );
   }

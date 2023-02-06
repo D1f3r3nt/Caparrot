@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
+  firebase_auth: ^4.2.5
   firebase_core: ^2.4.1
   floating_action_bubble: ^1.1.4
   flutter:

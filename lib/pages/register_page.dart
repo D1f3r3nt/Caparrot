@@ -1,3 +1,4 @@
+import 'package:caparrot/firebase/firebase.dart';
 import 'package:caparrot/utils/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
-  late String _email, _password;
+  late String _email, _password, _name;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             return null;
                           },
                           keyboardType: TextInputType.name,
-                          onSaved: (input) => _email = input!,
+                          onSaved: (input) => _name = input!,
                           decoration: InputDecoration(
                             labelText: 'Nom',
                             labelStyle: TextStyle(
@@ -212,6 +213,12 @@ class _RegisterPageState extends State<RegisterPage> {
   void _submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
+      EmailAuth.singUp(
+        context,
+        email: _email,
+        password: _password,
+        name: _name,
+      );
     }
   }
 }

@@ -1,3 +1,4 @@
+import 'package:caparrot/firebase/firebase.dart';
 import 'package:caparrot/utils/palete.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -239,7 +240,7 @@ class _LoginPageState extends State<LoginPage> {
   void _submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      Navigator.pushReplacementNamed(context, 'home');
+      EmailAuth.logIn(context, email: _email, password: _password);
     }
   }
 }

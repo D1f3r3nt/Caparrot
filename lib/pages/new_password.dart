@@ -1,3 +1,4 @@
+import 'package:caparrot/firebase/firebase.dart';
 import 'package:caparrot/utils/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +49,7 @@ class NewPassword extends StatelessWidget {
                           return null;
                         },
                         keyboardType: TextInputType.emailAddress,
-                        onSaved: (input) => _email = input!,
+                        onChanged: (input) => _email = input,
                         decoration: InputDecoration(
                           labelText: 'Email',
                           labelStyle: TextStyle(
@@ -82,7 +83,7 @@ class NewPassword extends StatelessWidget {
                       color: Palete.black50,
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          print('Hola');
+                          EmailAuth.newPassword(context, email: _email);
                         }
                       },
                       child: Text(
