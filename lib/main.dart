@@ -1,4 +1,3 @@
-import 'package:caparrot/pages/pages.dart';
 import 'package:caparrot/routes/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Caparrots',
-      initialRoute: 'createuser',
+      initialRoute: 'login',
       routes: getRoutes,
     );
   }

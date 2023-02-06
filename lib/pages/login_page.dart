@@ -1,4 +1,6 @@
+import 'package:caparrot/utils/palete.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,135 +29,139 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Palete.green70,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Colors.green,
-                  Colors.yellow,
-                ],
-              ),
-            ),
-            child: Form(
-              key: _formKey,
-              child: Center(
-                child: Container(
-                  width: 300,
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/escudo.png'),
+                fit: BoxFit.cover,
+                opacity: 0.5),
+          ),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: TextFormField(
+                    validator: (input) {
+                      if (input!.isEmpty) {
+                        return 'Perfavor posa un email';
+                      }
+                      return null;
+                    },
+                    keyboardType: TextInputType.emailAddress,
+                    onSaved: (input) => _email = input!,
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      filled: true,
+                      fillColor: Palete.white90,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: TextFormField(
+                    validator: (input) {
+                      if (input!.length < 6) {
+                        return 'La contrasenya ha de contenir un minim de 6 caracters';
+                      }
+                      return null;
+                    },
+                    onSaved: (input) => _password = input!,
+                    decoration: InputDecoration(
+                      labelText: 'Contrasenya',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      filled: true,
+                      fillColor: Palete.white90,
+                      focusColor: Palete.green90,
+                      hoverColor: Palete.green90,
+                    ),
+                    obscureText: true,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 30),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "Has olvidad la teva clau?",
+                          style: TextStyle(
+                            color: Palete.white20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                MaterialButton(
+                  color: Palete.black50,
+                  onPressed: _submit,
+                  child: Text(
+                    'Log In',
+                    style: TextStyle(color: Palete.white20),
+                  ),
+                ),
+                Divider(
+                  color: Palete.white20,
+                  indent: 10,
+                  endIndent: 10,
+                  thickness: 1,
+                ),
+                const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: MaterialButton(
+                    color: Palete.black50,
+                    onPressed: _submit,
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          height: 200,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: NetworkImage(
-                                    'https://media.mallorca-touristguide.com/imagenes/321/principal%201.JPG'),
-                                fit: BoxFit.fill),
-                          ),
-                          margin: EdgeInsets.only(bottom: 30),
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.google,
+                          color: Palete.white20,
                         ),
-                        TextFormField(
-                          validator: (input) {
-                            if (input!.isEmpty) {
-                              return 'Please enter an email';
-                            }
-                            return null;
-                          },
-                          keyboardType: TextInputType.emailAddress,
-                          onSaved: (input) => _email = input!,
-                          decoration: InputDecoration(
-                            labelText: 'Email',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        TextFormField(
-                          validator: (input) {
-                            if (input!.length < 6) {
-                              return 'Password must be at least 6 characters';
-                            }
-                            return null;
-                          },
-                          onSaved: (input) => _password = input!,
-                          decoration: InputDecoration(
-                            labelText: 'Password',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                          obscureText: true,
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(10, 0, 10, 20),
-                          alignment: Alignment.topRight,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Text(
-                              "Has olvidad la teva clau?",
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                        MaterialButton(
-                          color: Colors.lightBlueAccent,
-                          onPressed: _submit,
-                          child: Text(
-                            'Sign In',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                        Text('Altres opcions de login'),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            IconButton(
-                              icon: Icon(Icons.home),
-                              onPressed: () {},
-                            ),
-                            IconButton(
-                              icon: Icon(Icons.search),
-                              onPressed: () {},
-                            ),
-                            IconButton(
-                              icon: Icon(Icons.person),
-                              onPressed: () {},
-                            ),
-                          ],
-                        ),
-                        GestureDetector(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(10, 20, 10, 20),
-                            child: Text.rich(TextSpan(children: [
-                              TextSpan(text: "No tens cap compte? "),
-                              TextSpan(
-                                text: 'Registret',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Theme.of(context).accentColor),
-                              ),
-                            ])),
-                          ),
-                          onTap: () {
-                            print('ok');
-                          },
+                        const SizedBox(width: 10),
+                        Text(
+                          'Log in with Google',
+                          style: TextStyle(color: Palete.white20, fontSize: 17),
                         ),
                       ],
                     ),
                   ),
                 ),
-              ),
+                GestureDetector(
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(10, 20, 10, 20),
+                    child: Text.rich(TextSpan(children: [
+                      TextSpan(text: "No tens cap compte? "),
+                      TextSpan(
+                        text: 'Registret',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).accentColor),
+                      ),
+                    ])),
+                  ),
+                  onTap: () {
+                    print('ok');
+                  },
+                ),
+              ],
             ),
           ),
         ),

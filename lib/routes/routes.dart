@@ -9,5 +9,5 @@ Map<String, WidgetBuilder> getRoutes = {
   'inventory': (context) => InventoryPage(),
   'login': (context) => LoginPage(),
   'profile': (context) => ProfileScreen(),
-  'createuser': (context) => RegisterPage(),
+  'register': (context) => RegisterPage(),
 };
