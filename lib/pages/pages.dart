@@ -1,7 +1,9 @@
-export 'head_page.dart';
-export 'home_page.dart';
-export 'inventory_page.dart';
-export 'library_page.dart';
-export 'login_page.dart';
-
-export 'perfil_page.dart';
+export 'package:caparrot/pages/login_page.dart';
+export 'package:caparrot/pages/register_user_page.dart';
+export 'package:caparrot/pages/head_page.dart';
+export 'package:caparrot/pages/home_page.dart';
+export 'package:caparrot/pages/inventory_page.dart';
+export 'package:caparrot/pages/library_page.dart';
+export 'package:caparrot/pages/login_page.dart';
+export 'package:caparrot/pages/new_password.dart';
+export 'package:caparrot/pages/perfil_page.dart';
