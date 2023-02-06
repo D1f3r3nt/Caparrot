@@ -239,6 +239,7 @@ class _LoginPageState extends State<LoginPage> {
   void _submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
+      Navigator.pushReplacementNamed(context, 'home');
     }
   }
 }
