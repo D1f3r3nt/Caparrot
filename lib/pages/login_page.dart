@@ -74,6 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
+                          errorStyle: TextStyle(color: Palete.white20),
                           filled: true,
                           fillColor: Palete.white90,
                           focusedBorder: OutlineInputBorder(
@@ -112,6 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
+                          errorStyle: TextStyle(color: Palete.white20),
                           filled: true,
                           fillColor: Palete.white90,
                           focusedBorder: OutlineInputBorder(
