@@ -1,15 +1,6 @@
 import 'package:caparrot/utils/utils.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return RegisterPage();
-  }
-}
-
 class RegisterPage extends StatefulWidget {
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -33,13 +24,21 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           child: Column(
             children: [
+              const SizedBox(height: 20),
+              Text(
+                'Registrate',
+                style: TextStyle(
+                    color: Palete.white20,
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold),
+              ),
               Form(
                 key: _formKey,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: TextFormField(
@@ -164,7 +163,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Palete.black50,
                         onPressed: _submit,
                         child: const Text(
-                          'Registret',
+                          'Sing up',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,

@@ -2,21 +2,6 @@ import 'package:caparrot/utils/palete.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Login Form',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: LoginPage(),
-    );
-  }
-}
-
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -140,7 +125,8 @@ class _LoginPageState extends State<LoginPage> {
                           padding: const EdgeInsets.symmetric(
                               vertical: 8.0, horizontal: 30),
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () =>
+                                Navigator.pushNamed(context, 'new_password'),
                             child: Text(
                               "Has olvidad la teva clau?",
                               style: TextStyle(
@@ -152,6 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 20),
                     MaterialButton(
                       color: Palete.black50,
                       onPressed: _submit,
@@ -252,8 +239,6 @@ class _LoginPageState extends State<LoginPage> {
   void _submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      print(_email);
-      print(_password);
     }
   }
 }
