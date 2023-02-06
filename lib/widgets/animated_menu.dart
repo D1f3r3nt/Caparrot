@@ -54,6 +54,7 @@ class AnimatedMenu extends StatelessWidget {
           icon: Icons.person,
           titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
           onPress: () {
+            Navigator.pushNamed(context, 'profile');
             _animationController.reverse();
           },
         ),
