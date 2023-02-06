@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -40,14 +41,32 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     final Completer<GoogleMapController> _controller =
         Completer<GoogleMapController>();
+    Set<Marker> markerse = new Set<Marker>();
+    for (int i = 0; i < 10; i++) {
+      Random rnd;
+      rnd = new Random();
+      double num = rnd.nextDouble() * (39.774562 - 39.764581) + 39.764581;
+      double num2 = rnd.nextDouble() * (3.028013 - 3.019063) + 3.019063;
+
+      markerse.add(
+        Marker(
+          markerId: MarkerId('marker-$i'),
+          position: LatLng(num, num2),
+          visible: false,
+          onTap: () {},
+        ),
+      );
+    }
 
     return Scaffold(
       body: SafeArea(
         child: GoogleMap(
+          markers: markerse,
           myLocationEnabled: true,
           mapType: MapType.normal,
           initialCameraPosition: _puntInicial,
           onMapCreated: (GoogleMapController controller) {
+            setState(() {});
             _controller.complete(controller);
           },
         ),

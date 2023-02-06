@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -25,7 +25,7 @@ SafeArea header(Size size) {
   return SafeArea(
     child: Center(
       child:
-      CircleAvatar(radius: 120, backgroundImage: NetworkImage(userImage)),
+          CircleAvatar(radius: 120, backgroundImage: NetworkImage(userImage)),
     ),
   );
 }
