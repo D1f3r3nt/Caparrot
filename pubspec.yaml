@@ -21,6 +21,7 @@ dependencies:
 dev_dependencies:
   change_app_package_name: ^1.1.0
   flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.2.17
   flutter_test:
     sdk: flutter
 
@@ -42,3 +43,7 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+
+flutter_native_splash:
+  color: "#008f4c"
+  image: assets/splashscreen/splash.png
