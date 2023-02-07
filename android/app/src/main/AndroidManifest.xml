@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cat.paucasesnoves.caparrot">
    <application
-        android:label="caparrot"
+        android:label="Caparrot"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
