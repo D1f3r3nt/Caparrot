@@ -4,6 +4,8 @@ import 'package:caparrot/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/logros_card.dart';
+
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -62,21 +64,10 @@ class ProfileScreen extends StatelessWidget {
                 thickness: 1,
               ),
               const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Wrap(
-                  alignment: WrapAlignment.center,
-                  spacing: 20,
-                  children: [
-                    Text('Aqui'),
-                    Text('Aqui'),
-                    Text('Aqui'),
-                    Text('Aqui'),
-                    Text('Aqui'),
-                    Text('Aqui'),
-                    Text('Aqui'),
-                  ],
-                ),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20,
+                children: [CardLogro()],
               ),
               const SizedBox(height: 10),
               Divider(
