@@ -1,5 +1,7 @@
+import 'package:caparrot/firebase/firebase.dart';
 import 'package:caparrot/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:caparrot/provider/provider.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -8,10 +10,21 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
-  late String _email, _password;
+  late String _email, _password, _name;
 
   @override
   Widget build(BuildContext context) {
+    final authProvider =
+        Provider.of<AuthenticationProvider>(context, listen: false);
+
+    void _onSingUp() {
+      if (_formKey.currentState!.validate()) {
+        _formKey.currentState!.save();
+        authProvider.emailSingUp(context,
+            email: _email, password: _password, name: _name);
+      }
+    }
+
     return Scaffold(
       backgroundColor: Palete.green70,
       body: SafeArea(
@@ -49,7 +62,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             return null;
                           },
                           keyboardType: TextInputType.name,
-                          onSaved: (input) => _email = input!,
+                          onSaved: (input) => _name = input!,
                           decoration: InputDecoration(
                             labelText: 'Nom',
                             labelStyle: TextStyle(
@@ -161,7 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       const SizedBox(height: 20),
                       MaterialButton(
                         color: Palete.black50,
-                        onPressed: _submit,
+                        onPressed: _onSingUp,
                         child: const Text(
                           'Sing up',
                           style: TextStyle(
@@ -207,11 +220,5 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       ),
     );
-  }
-
-  void _submit() {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
-    }
   }
 }

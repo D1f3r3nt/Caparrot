@@ -1,13 +1,23 @@
 import 'package:caparrot/utils/palete.dart';
 import 'package:caparrot/widgets/widgets.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:caparrot/provider/provider.dart';
 
 import '../widgets/logros_card.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
+    final _user = FirebaseAuth.instance.currentUser!;
+    final authProvider =
+        Provider.of<AuthenticationProvider>(context, listen: false);
+
+    void _onLogOut() {
+      authProvider.logout(context);
+    }
+
     return Scaffold(
       backgroundColor: Colors.green,
       appBar: AppBar(
@@ -46,7 +56,7 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Nombre',
+                      _user.displayName ?? _user.email!,
                       style: TextStyle(fontSize: 25, color: Palete.white20),
                     )
                   ],
@@ -81,7 +91,7 @@ class ProfileScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: MaterialButton(
                   padding: const EdgeInsets.all(8),
-                  onPressed: () {},
+                  onPressed: _onLogOut,
                   color: Palete.black50,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
