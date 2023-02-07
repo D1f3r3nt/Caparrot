@@ -1,4 +1,4 @@
-import 'package:caparrot/firebase/firebase.dart';
+import 'package:caparrot/provider/provider.dart';
 import 'package:caparrot/utils/palete.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -14,6 +14,22 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final authProvider =
+        Provider.of<AuthenticationProvider>(context, listen: false);
+
+    void _onSubmitLogIn() {
+      if (_formKey.currentState!.validate()) {
+        _formKey.currentState!.save();
+        authProvider.emailLogin(context, email: _email, password: _password);
+      }
+    }
+
+    void _onGoogleLogIn() {
+      authProvider.googleLogin(context);
+    }
+
+    void _onAppleLogIn() {}
+
     return Scaffold(
       backgroundColor: Palete.green70,
       body: SafeArea(
@@ -142,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 20),
                     MaterialButton(
                       color: Palete.black50,
-                      onPressed: _submit,
+                      onPressed: _onSubmitLogIn,
                       child: Text(
                         'Log In',
                         style: TextStyle(color: Palete.white20, fontSize: 16),
@@ -162,9 +178,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: MaterialButton(
                   color: Palete.black50,
-                  onPressed: () {
-                    print('G');
-                  },
+                  onPressed: _onGoogleLogIn,
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -187,9 +201,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: MaterialButton(
                   color: Palete.black50,
-                  onPressed: () {
-                    print('A');
-                  },
+                  onPressed: _onAppleLogIn,
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -235,12 +247,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  void _submit() {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
-      EmailAuth.logIn(context, email: _email, password: _password);
-    }
   }
 }

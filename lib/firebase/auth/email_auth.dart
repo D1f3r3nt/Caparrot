@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
 class EmailAuth {
-  static void singUp(
+  Future<void> singUp(
     BuildContext context, {
     required String email,
     required String password,
@@ -17,8 +17,6 @@ class EmailAuth {
       );
 
       credential.user!.updateDisplayName(name);
-
-      Navigator.pushReplacementNamed(context, '/');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         Snackbar.errorSnackbar(context, 'La contrasenya es masa débil');
@@ -30,7 +28,7 @@ class EmailAuth {
     }
   }
 
-  static void logIn(
+  Future<void> logIn(
     BuildContext context, {
     required String email,
     required String password,
@@ -38,7 +36,6 @@ class EmailAuth {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      Navigator.pushReplacementNamed(context, '/');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         Snackbar.errorSnackbar(context, 'Usuari no encontrat');
@@ -48,14 +45,20 @@ class EmailAuth {
     }
   }
 
-  static void logOut(BuildContext context) async {
-    await FirebaseAuth.instance.signOut();
-    Navigator.pushReplacementNamed(context, '/');
+  Future<void> logOut(BuildContext context) async {
+    try {
+      await FirebaseAuth.instance.signOut();
+    } catch (e) {
+      print('Email error: $e');
+    }
   }
 
-  static void newPassword(BuildContext context, {required String email}) async {
+  Future<void> newPassword(BuildContext context,
+      {required String email}) async {
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
     Snackbar.correctSnackbar(
-        context, 'Se ha enviado un email con los pasos a seguir');
+      context,
+      'Se ha enviado un email con los pasos a seguir',
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:caparrot/utils/utils.dart';
+import 'package:caparrot/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -17,24 +18,7 @@ class Gateway extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Palete.green70,
-      body: SafeArea(
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/escudo.png'),
-              fit: BoxFit.cover,
-              opacity: 0.5,
-            ),
-          ),
-          child: Center(
-            child: CircularProgressIndicator(
-              color: Palete.black90,
-            ),
-          ),
-        ),
-      ),
+      body: LoadingPage(),
     );
   }
 }

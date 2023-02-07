@@ -1,4 +1,4 @@
-import 'package:caparrot/firebase/firebase.dart';
+import 'package:caparrot/provider/provider.dart';
 import 'package:caparrot/utils/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +8,15 @@ class NewPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
+    final authProvider =
+        Provider.of<AuthenticationProvider>(context, listen: false);
     late String _email;
+
+    void _onNewPassword() {
+      if (_formKey.currentState!.validate()) {
+        authProvider.emailNewPassword(context, email: _email);
+      }
+    }
 
     return Scaffold(
       backgroundColor: Palete.green70,
@@ -81,11 +89,7 @@ class NewPassword extends StatelessWidget {
                     const SizedBox(height: 20),
                     MaterialButton(
                       color: Palete.black50,
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          EmailAuth.newPassword(context, email: _email);
-                        }
-                      },
+                      onPressed: _onNewPassword,
                       child: Text(
                         'Send It',
                         style: TextStyle(color: Palete.white20, fontSize: 16),

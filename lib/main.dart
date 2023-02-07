@@ -1,4 +1,5 @@
 import 'package:caparrot/routes/routes.dart';
+import 'package:caparrot/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ void main() async {
   await Firebase.initializeApp();
   await FirebaseAuth.instance;
 
-  runApp(const MyApp());
+  runApp(const AppState());
 }
 
 class MyApp extends StatelessWidget {
