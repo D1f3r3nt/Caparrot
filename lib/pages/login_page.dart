@@ -28,8 +28,6 @@ class _LoginPageState extends State<LoginPage> {
       authProvider.googleLogin(context);
     }
 
-    void _onAppleLogIn() {}
-
     return Scaffold(
       backgroundColor: Palete.green70,
       body: SafeArea(
@@ -190,29 +188,6 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(width: 10),
                       Text(
                         'Log in with Google',
-                        style: TextStyle(color: Palete.white20, fontSize: 17),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 5),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: MaterialButton(
-                  color: Palete.black50,
-                  onPressed: _onAppleLogIn,
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.apple,
-                        color: Palete.white20,
-                      ),
-                      const SizedBox(width: 10),
-                      Text(
-                        'Log in with Apple',
                         style: TextStyle(color: Palete.white20, fontSize: 17),
                       ),
                     ],
