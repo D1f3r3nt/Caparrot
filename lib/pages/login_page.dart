@@ -14,6 +14,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<MusicProvider>(context).play();
     final authProvider =
         Provider.of<AuthenticationProvider>(context, listen: false);
 

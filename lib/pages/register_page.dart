@@ -14,6 +14,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<MusicProvider>(context, listen: false).play();
     final authProvider =
         Provider.of<AuthenticationProvider>(context, listen: false);
 
@@ -195,26 +196,27 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 5),
               GestureDetector(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Ya tens un compte? ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Ya tens un compte? ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Text(
-                      'Inicia sessió',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Palete.white20,
+                      Text(
+                        'Inicia sessió',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Palete.white20,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                onTap: () => Navigator.pushReplacementNamed(context, 'login'),
-              ),
+                    ],
+                  ),
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, 'login');
+                  }),
             ],
           ),
         ),

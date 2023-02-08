@@ -7,3 +7,4 @@ export 'login_page.dart';
 export 'new_password.dart';
 export 'perfil_page.dart';
 export 'register_page.dart';
+export 'settings.dart';
