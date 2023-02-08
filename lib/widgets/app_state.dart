@@ -10,6 +10,7 @@ class AppState extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AuthenticationProvider()),
+        ChangeNotifierProvider(create: (_) => MusicProvider()),
       ],
       child: const MyApp(),
     );

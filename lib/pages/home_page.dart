@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import '../provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -39,6 +40,8 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<MusicProvider>(context).play2();
+
     final Completer<GoogleMapController> _controller =
         Completer<GoogleMapController>();
     Set<Marker> markerse = new Set<Marker>();
