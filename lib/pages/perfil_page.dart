@@ -24,7 +24,9 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Palete.green90,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, 'settings');
+            },
             icon: Icon(
               Icons.settings,
               color: Palete.white90,

@@ -11,4 +11,5 @@ Map<String, WidgetBuilder> getRoutes = {
   'profile': (context) => ProfileScreen(),
   'register': (context) => RegisterPage(),
   'new_password': (context) => NewPassword(),
+  'settings': (context) => Settings(),
 };
