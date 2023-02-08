@@ -15,9 +15,7 @@ void main() async {
   await Firebase.initializeApp();
   await FirebaseAuth.instance;
 
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (_) => MusicProvider()),
-  ], child: AppState()));
+  runApp(AppState());
 }
 
 class MyApp extends StatelessWidget {
