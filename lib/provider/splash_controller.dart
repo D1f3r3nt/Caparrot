@@ -4,10 +4,10 @@ import 'package:permission_handler/permission_handler.dart';
 
 //Si localizacion ha sido aceptada envia directo a login
 class SplashController extends ChangeNotifier {
-  final Permission _locationPermission;
+  final Permission _locationPermission = Permission.locationWhenInUse;
   String? _routeName;
 
-  SplashController(this._locationPermission);
+  SplashController();
 
   Future<void> checkPermission() async {
     final isGranted = await _locationPermission.isGranted;
