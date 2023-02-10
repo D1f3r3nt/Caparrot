@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import 'package:caparrot/request_permission/request_permission_controller.dart';
+import 'package:caparrot/utils/request_permission_controller.dart';
+import 'package:caparrot/utils/popup.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -14,7 +15,7 @@ class RequestPermissionPage extends StatefulWidget {
 class _RequestPermissionPageState extends State<RequestPermissionPage>
     with WidgetsBindingObserver {
   //Instancia clase RequestPermissionController
-  final _controller = RequestPermissionController(Permission.locationWhenInUse);
+  final _controller = RequestPermissionController();
   late StreamSubscription _subscription;
   bool _fromSettings = false;
 
@@ -22,47 +23,25 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-      _controller.request();
+
+    _controller.request();
+
     _subscription = _controller.onStatusChanged.listen((status) {
-      switch (status) {
-        case PermissionStatus.granted:
-          _goToHome();
-          break;
-        case PermissionStatus.permanentlyDenied:
-          showDialog(
-            context: context,
-            builder: (_) => AlertDialog(
-              title: const Text(
-                  "No se pudo recuperar la ubicacion."),
-              content:
-                  const Text("Para acceder a la aplicacion, deberá ir a ajustes"
-                      "y autorizar ubicacion de manera manual."),
-              actions: [
-                TextButton(
-                    onPressed: () async {
-                      Navigator.pop(context);
-                      _fromSettings = await openAppSettings();
-                    },
-                    child: Text("Ajustes")),
-                TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text("Cancelar"))
-              ],
-            ),
-          );
-          break;
+      if (status == PermissionStatus.granted) {
+        Future.delayed(Duration.zero,
+            () => Navigator.pushReplacementNamed(context, 'home'));
+      } else {
+        _fromSettings = popUpUbi(context, openAppSettings());
       }
     });
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
-    if (state == AppLifecycleState.resumed && _fromSettings ) {
+    if (state == AppLifecycleState.resumed && _fromSettings) {
       final status = await _controller.check();
       if (status == PermissionStatus.granted) {
-        _goToHome();
+        Navigator.pushReplacementNamed(context, 'home');
       }
     }
     _fromSettings = false;
@@ -75,10 +54,6 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
     _subscription.cancel();
     _controller.dispose();
     super.dispose();
-  }
-
-  void _goToHome() {
-    Navigator.pushNamed(context, 'home');
   }
 
   @override

@@ -1,5 +1,4 @@
 import 'package:caparrot/pages/pages.dart';
-import 'package:caparrot/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
 Map<String, WidgetBuilder> getRoutes = {
@@ -12,7 +11,6 @@ Map<String, WidgetBuilder> getRoutes = {
   'profile': (context) => ProfileScreen(),
   'register': (context) => RegisterPage(),
   'new_password': (context) => NewPassword(),
-  'settings': (context) => Settings(),
+  'settings': (context) => SettingsPage(),
   'location_permission': (context) => RequestPermissionPage(),
-  'splash' : (context) => SplashPage()
 };

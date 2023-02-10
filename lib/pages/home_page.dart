@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:caparrot/widgets/maps.dart';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -14,24 +15,28 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   late Animation<double> _animation;
   late AnimationController _animationController;
   late bool _gpsEnabled;
-  late Widget cargar;
-  bool loading = false;
+  bool _currentLocation = false;
 
   StreamSubscription? _gpsSubscription;
-  Position? _initialPosition;
+  Position? _position;
 
   @override
   void initState() {
+    // Para la ubicacion
     verifyGps();
+
+    // Para el menu desplegable
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 200),
     );
 
+    // Para el menu desplegable
     final curvedAnimation =
         CurvedAnimation(curve: Curves.easeInOut, parent: _animationController);
     _animation = Tween<double>(begin: 0, end: 1).animate(curvedAnimation);
@@ -40,21 +45,20 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-
+    // Musica
     Provider.of<MusicProvider>(context).play2();
 
-    final Completer<GoogleMapController> _controller =
-        Completer<GoogleMapController>();
-    Set<Marker> markers = new Set<Marker>();
-
-    markers.add(Marker(
-        markerId: MarkerId('marker-99'),
-        position: LatLng(39.7693131, 3.0239083)));
-
+    final Set<Marker> markers = new Set<Marker>();
     Random rnd;
 
+    markers.add(const Marker(
+      markerId: MarkerId('Caparrot-1'),
+      position: LatLng(39.7693131, 3.0239083),
+    ));
+
+    // Markers aleatorios por SaPobla
     for (int i = 0; i < 10; i++) {
-      rnd = new Random();
+      rnd = Random();
       double num = rnd.nextDouble() * (39.774562 - 39.764581) + 39.764581;
       double num2 = rnd.nextDouble() * (3.028013 - 3.019063) + 3.019063;
       markers.add(
@@ -66,33 +70,16 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       );
     }
 
-    if (!loading) {
-      cargar = Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child: const Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
-    } else {
+    if (_currentLocation) {
       if (!_gpsEnabled) {
-        gpsNotActive();
+        return const GpsNotEnabled();
       }
-      //_declareInitialPosition();
-      cargar = Scaffold(
+
+      return Scaffold(
         body: SafeArea(
-          child: GoogleMap(
+          child: Maps(
             markers: markers,
-            myLocationEnabled: true,
-            mapType: MapType.normal,
-            initialCameraPosition: CameraPosition(
-                target: LatLng(30, 33),
-                zoom: 18, tilt: 60),
-            onMapCreated: (GoogleMapController controller) {
-              setState(() {});
-              _controller.complete(controller);
-            },
+            position: _position!,
           ),
         ),
         floatingActionButton: AnimatedMenu(
@@ -101,45 +88,28 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ),
       );
     }
-    return cargar;
-  }
-
-  Center gpsNotActive() {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Text(
-            "Para el uso de nuestra aplicacion,es necasario acceder a su ubicacion.\nPor favor, active la ubicacion",
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              turnOnGPS();
-            },
-            child: const Text("Activar GPS"),
-          )
-        ],
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: const Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
     );
   }
 
   void verifyGps() async {
-    _gpsEnabled = await Geolocator.isLocationServiceEnabled();
-    loading = true;
-    _gpsSubscription = Geolocator.getServiceStatusStream().listen(
-      (status) async {
+    dynamic _gps = await Geolocator.isLocationServiceEnabled();
+    _position = await Geolocator.getCurrentPosition();
+
+    setState(() {
+      _gpsEnabled = _gps;
+      _currentLocation = true;
+      _gpsSubscription =
+          Geolocator.getServiceStatusStream().listen((status) async {
         _gpsEnabled = status == ServiceStatus.enabled;
-        _initialPosition = await Geolocator.getLastKnownPosition();
-      },
-    );
+        _position = await Geolocator.getLastKnownPosition();
+      });
+    });
   }
-
-  Future<Position> _declareInitialPosition() async {
-    _initialPosition = await Geolocator.getCurrentPosition();
-    return _initialPosition!;
-  }
-
-  Future<void> turnOnGPS() => Geolocator.openLocationSettings();
 }

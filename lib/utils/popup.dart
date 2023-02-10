@@ -22,3 +22,31 @@ void popUpCredits(BuildContext context) {
             ),
           ));
 }
+
+bool popUpUbi(BuildContext context, dynamic function) {
+  bool response = false;
+
+  showDialog(
+    context: context,
+    builder: (_) => AlertDialog(
+      title: const Text("No se pudo recuperar la ubicacion."),
+      content: const Text("Para acceder a la aplicacion, deberá ir a ajustes"
+          "y autorizar ubicacion de manera manual."),
+      actions: [
+        TextButton(
+            onPressed: () async {
+              Navigator.pop(context);
+              response = await function;
+            },
+            child: Text("Ajustes")),
+        TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text("Cancelar"))
+      ],
+    ),
+  );
+
+  return response;
+}
