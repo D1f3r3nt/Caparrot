@@ -6,22 +6,24 @@ class GpsNotEnabled extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Text(
-            "Para el uso de nuestra aplicacion,es necasario acceder a su ubicacion.\nPor favor, active la ubicacion",
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Geolocator.openLocationSettings();
-            },
-            child: const Text("Activar GPS"),
-          )
-        ],
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              "Para el uso de nuestra aplicacion,es necasario acceder a su ubicacion.\nPor favor, active la ubicacion",
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Geolocator.openLocationSettings();
+              },
+              child: const Text("Activar GPS"),
+            )
+          ],
+        ),
       ),
     );
   }

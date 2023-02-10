@@ -23,16 +23,10 @@ class Gateway extends StatelessWidget {
     );
   }
 
-  void home(BuildContext context) {
-    final _controller = Provider.of<SplashController>(context);
+  void home(BuildContext context) async {
+    final _controller = Provider.of<SplashController>(context, listen: false);
 
-    WidgetsBinding.instance
-        .addPostFrameCallback((_) => _controller.checkPermission());
-
-    _controller.addListener(() {
-      if (_controller.routeName != null) {
-        Navigator.pushReplacementNamed(context, _controller.routeName!);
-      }
-    });
+    await _controller.checkPermission();
+    Navigator.pushReplacementNamed(context, _controller.routeName!);
   }
 }
