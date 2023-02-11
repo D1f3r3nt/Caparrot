@@ -3,4 +3,4 @@ export 'app_state.dart';
 export 'estadistics.dart';
 export 'gps_not_enabled.dart';
 export 'loading_page.dart';
-export 'logros_card.dart';
+export 'card_logro.dart';
