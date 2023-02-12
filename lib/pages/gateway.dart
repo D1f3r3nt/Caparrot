@@ -24,7 +24,7 @@ class Gateway extends StatelessWidget {
   }
 
   void home(BuildContext context) async {
-    final _controller = Provider.of<SplashController>(context, listen: false);
+    final _controller = Provider.of<SplashProvider>(context, listen: false);
 
     await _controller.checkPermission();
     Navigator.pushReplacementNamed(context, _controller.routeName!);

@@ -11,7 +11,8 @@ class AppState extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
         ChangeNotifierProvider(create: (_) => MusicProvider()),
-        ChangeNotifierProvider(create: (_) => SplashController()),
+        ChangeNotifierProvider(create: (_) => SplashProvider()),
+        ChangeNotifierProvider(create: (_) => FirebaseCrudProvider()),
       ],
       child: const MyApp(),
     );
