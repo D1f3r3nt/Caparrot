@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -48,6 +49,7 @@ class _MapsState extends State<Maps> {
           compassEnabled: false,
           onMapCreated: (GoogleMapController controller) => setState(() {
             _controller = controller;
+            changeMapMode();
           }),
           onTap: (_) => setState(() {
             _modifyPosition = false;
@@ -74,6 +76,18 @@ class _MapsState extends State<Maps> {
         )
       ],
     );
+  }
+
+  changeMapMode() {
+    getJsonFile("assets/map_style.json").then(setMapStyle);
+  }
+
+  Future<String> getJsonFile(String path) async {
+    return await rootBundle.loadString(path);
+  }
+
+  void setMapStyle(String mapStyle) {
+    _controller!.setMapStyle(mapStyle);
   }
 
   void listenUbi() {
