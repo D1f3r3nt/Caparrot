@@ -4,8 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:caparrot/provider/provider.dart';
 
-import '../widgets/logros_card.dart';
-
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,6 +11,11 @@ class ProfileScreen extends StatelessWidget {
     final _user = FirebaseAuth.instance.currentUser!;
     final authProvider =
         Provider.of<AuthenticationProvider>(context, listen: false);
+    final firebaseCrudProvider = Provider.of<FirebaseCrudProvider>(context);
+    firebaseCrudProvider.getAchievements();
+
+    final String imageUrl = _user.photoURL ??
+        'https://firebasestorage.googleapis.com/v0/b/caparrot-87657.appspot.com/o/user.png?alt=media&token=3321d148-9e7c-4d27-82b2-22919c5c4921';
 
     void _onLogOut() {
       authProvider.logout(context);
@@ -45,10 +48,10 @@ class ProfileScreen extends StatelessWidget {
           child: ListView(
             children: [
               const SizedBox(height: 10),
-              const Center(
+              Center(
                 child: CircleAvatar(
-                  radius: 80,
-                  backgroundImage: AssetImage('assets/user.png'),
+                  radius: 60,
+                  backgroundImage: NetworkImage(imageUrl),
                 ),
               ),
               const SizedBox(height: 10),
@@ -72,10 +75,15 @@ class ProfileScreen extends StatelessWidget {
                 thickness: 1,
               ),
               const SizedBox(height: 10),
-              Wrap(
-                alignment: WrapAlignment.center,
-                spacing: 20,
-                children: [CardLogro()],
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 20,
+                  children: firebaseCrudProvider.achievemets
+                      .map((achievements) => CardLogro(model: achievements))
+                      .toList(),
+                ),
               ),
               const SizedBox(height: 10),
               Divider(

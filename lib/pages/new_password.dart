@@ -19,6 +19,7 @@ class NewPassword extends StatelessWidget {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Palete.green70,
       appBar: AppBar(
         backgroundColor: Palete.green90,

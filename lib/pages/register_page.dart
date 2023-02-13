@@ -27,6 +27,7 @@ class _RegisterPageState extends State<RegisterPage> {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Palete.green70,
       body: SafeArea(
         child: Container(
