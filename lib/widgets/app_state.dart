@@ -13,6 +13,7 @@ class AppState extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MusicProvider()),
         ChangeNotifierProvider(create: (_) => SplashProvider()),
         ChangeNotifierProvider(create: (_) => FirebaseCrudProvider()),
+        ChangeNotifierProvider(create: (_) => OkProvider())
       ],
       child: const MyApp(),
     );
