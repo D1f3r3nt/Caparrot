@@ -1,7 +1,6 @@
 import 'package:caparrot/firebase/database/achievements_db.dart';
 import 'package:caparrot/firebase/database/users_db.dart';
 import 'package:caparrot/models/models.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class FirebaseCrudProvider extends ChangeNotifier {
@@ -9,10 +8,19 @@ class FirebaseCrudProvider extends ChangeNotifier {
   final UsersDb _usersDb = UsersDb();
 
   List<AchievementModel> achievemets = [];
+  UserModel? user;
 
   void getAchievements() async {
     achievemets = await _achievementsDb.getAchievements();
-    _usersDb.getUserById();
     notifyListeners();
+  }
+
+  void getUser() async {
+    user = await _usersDb.getUserById();
+    notifyListeners();
+  }
+
+  void logout() {
+    user = null;
   }
 }

@@ -144,6 +144,8 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     // Musica
     Provider.of<MusicProvider>(context).play2();
+    // Progreso
+    Provider.of<FirebaseCrudProvider>(context).getUser();
 
     Random rnd;
 
