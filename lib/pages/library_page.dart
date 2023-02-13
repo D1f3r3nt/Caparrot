@@ -1,6 +1,8 @@
 import 'package:caparrot/utils/utils.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/card_library.dart';
+
 class LibraryPage extends StatelessWidget {
   const LibraryPage({super.key});
 
@@ -20,8 +22,10 @@ class LibraryPage extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Center(
-          child: Text('Hola'),
+        child: Container(
+          child: ListView(
+            children: [CardLibrary()],
+          ),
         ),
       ),
     );

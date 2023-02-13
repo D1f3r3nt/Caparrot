@@ -1,3 +1,4 @@
+import 'package:caparrot/provider/provider.dart';
 import 'package:caparrot/utils/utils.dart';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,7 +13,7 @@ class Gateway extends StatelessWidget {
       if (FirebaseAuth.instance.currentUser == null) {
         Navigator.pushReplacementNamed(context, 'login');
       } else {
-        Navigator.pushReplacementNamed(context, 'home');
+        home(context);
       }
     });
 
@@ -20,5 +21,12 @@ class Gateway extends StatelessWidget {
       backgroundColor: Palete.green70,
       body: LoadingPage(),
     );
+  }
+
+  void home(BuildContext context) async {
+    final _controller = Provider.of<SplashProvider>(context, listen: false);
+
+    await _controller.checkPermission();
+    Navigator.pushReplacementNamed(context, _controller.routeName!);
   }
 }

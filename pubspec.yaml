@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   audioplayers: ^3.0.1
+  cloud_firestore: ^4.3.2
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.2.5
   firebase_core: ^2.4.1
@@ -15,8 +16,10 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.3.0
+  geolocator: ^9.0.2
   google_maps_flutter: ^2.2.3
   google_sign_in: ^5.4.4
+  permission_handler: ^10.2.0
   provider: ^6.0.5
 
 dev_dependencies:

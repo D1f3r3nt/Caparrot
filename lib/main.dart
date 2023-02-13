@@ -1,4 +1,3 @@
-import 'package:caparrot/provider/provider.dart';
 import 'package:caparrot/routes/routes.dart';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
