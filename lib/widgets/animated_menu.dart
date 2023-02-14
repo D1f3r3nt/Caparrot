@@ -37,17 +37,6 @@ class AnimatedMenu extends StatelessWidget {
           },
         ),
         Bubble(
-          title: "Inventari",
-          iconColor: Palete.white90,
-          bubbleColor: Palete.green70,
-          icon: Icons.inventory,
-          titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
-          onPress: () {
-            Navigator.pushNamed(context, 'inventory');
-            _animationController.reverse();
-          },
-        ),
-        Bubble(
           title: "Usuari",
           iconColor: Palete.white90,
           bubbleColor: Palete.green70,

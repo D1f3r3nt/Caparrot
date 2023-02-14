@@ -9,6 +9,7 @@ class CardLibrary extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
     return Wrap(
       children: [
         InkWell(
@@ -17,7 +18,7 @@ class CardLibrary extends StatelessWidget {
             width: screenWidth,
             decoration: BoxDecoration(
               border: Border.all(color: Colors.green, width: 1),
-              image: DecorationImage(
+              image: const DecorationImage(
                 image: AssetImage('assets/baile.jpg'),
                 fit: BoxFit.fill,
               ),
@@ -27,7 +28,7 @@ class CardLibrary extends StatelessWidget {
             showDialog(
               context: context,
               builder: (BuildContext context) {
-                return AlertDialog(
+                return const AlertDialog(
                   backgroundColor: Color.fromARGB(255, 155, 229, 187),
                   titleTextStyle: TextStyle(
                       color: Color.fromARGB(255, 255, 86, 86), fontSize: 20.0),
@@ -47,7 +48,7 @@ class CardLibrary extends StatelessWidget {
             width: screenWidth,
             decoration: BoxDecoration(
               border: Border.all(color: Colors.green, width: 1),
-              image: DecorationImage(
+              image: const DecorationImage(
                 image: AssetImage('assets/festamajor.jpg'),
                 fit: BoxFit.fill,
               ),
@@ -57,7 +58,7 @@ class CardLibrary extends StatelessWidget {
             showDialog(
               context: context,
               builder: (BuildContext context) {
-                return AlertDialog(
+                return const AlertDialog(
                   backgroundColor: Color.fromARGB(255, 129, 243, 178),
                   titleTextStyle: TextStyle(
                       color: Color.fromARGB(255, 255, 86, 86), fontSize: 20.0),

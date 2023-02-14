@@ -1,7 +1,6 @@
 import 'package:caparrot/utils/utils.dart';
+import 'package:caparrot/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-
-import '../widgets/card_library.dart';
 
 class LibraryPage extends StatelessWidget {
   const LibraryPage({super.key});

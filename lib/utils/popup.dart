@@ -38,7 +38,7 @@ bool popUpUbi(BuildContext context, dynamic function) {
               Navigator.pop(context);
               response = await function;
             },
-            child: Text("Ajustes")),
+            child: const Text("Ajustes")),
         TextButton(
             onPressed: () {
               Navigator.pop(context);
