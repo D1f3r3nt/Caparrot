@@ -8,7 +8,38 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addObserver(this);
+    super.initState();
+  }
+
+  late AppLifecycleState appLifecycleState;
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    appLifecycleState = state;
+    setState(() {});
+    super.didChangeAppLifecycleState(state);
+
+    if (state == AppLifecycleState.paused) {
+      print("minimizado");
+      Provider.of<MusicProvider>(context, listen: false).pauseMusic();
+    }
+
+    if (state == AppLifecycleState.resumed) {
+      print("maximizado");
+      Provider.of<MusicProvider>(context, listen: false).resumeMusic();
+    }
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
   final _formKey = GlobalKey<FormState>();
   late String _email, _password;
 

@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   late Animation<double> _animation;
   late AnimationController _animationController;
   late bool _gpsEnabled;
@@ -26,9 +26,27 @@ class _HomePageState extends State<HomePage>
   StreamSubscription? _gpsSubscription;
   Position? _position;
 
+  late AppLifecycleState appLifecycleState;
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    appLifecycleState = state;
+    setState(() {});
+    super.didChangeAppLifecycleState(state);
+
+    if (state == AppLifecycleState.paused) {
+      Provider.of<MusicProvider>(context, listen: false).pauseMusic();
+    }
+
+    if (state == AppLifecycleState.resumed) {
+      Provider.of<MusicProvider>(context, listen: false).resumeMusic();
+    }
+  }
+
   @override
   void initState() {
     addmarker();
+    WidgetsBinding.instance.addObserver(this);
     // Para la ubicacion
     verifyGps();
 

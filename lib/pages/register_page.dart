@@ -8,9 +8,39 @@ class RegisterPage extends StatefulWidget {
   _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _RegisterPageState extends State<RegisterPage>
+    with WidgetsBindingObserver {
   final _formKey = GlobalKey<FormState>();
   late String _email, _password, _name;
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addObserver(this);
+    super.initState();
+  }
+
+  late AppLifecycleState appLifecycleState;
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    appLifecycleState = state;
+    setState(() {});
+    super.didChangeAppLifecycleState(state);
+
+    if (state == AppLifecycleState.paused) {
+      Provider.of<MusicProvider>(context, listen: false).pauseMusic();
+    }
+
+    if (state == AppLifecycleState.resumed) {
+      Provider.of<MusicProvider>(context, listen: false).resumeMusic();
+    }
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
