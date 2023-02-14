@@ -10,3 +10,4 @@ export 'perfil_page.dart';
 export 'register_page.dart';
 export 'request_permission_page.dart';
 export 'settings_page.dart';
+export 'tutorial_screen.dart';

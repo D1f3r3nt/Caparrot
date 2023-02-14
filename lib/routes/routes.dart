@@ -13,4 +13,5 @@ Map<String, WidgetBuilder> getRoutes = {
   'new_password': (context) => NewPassword(),
   'settings': (context) => SettingsPage(),
   'location_permission': (context) => RequestPermissionPage(),
+  'tutorial': (context) => IntroductionScreens(),
 };
