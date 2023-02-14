@@ -81,7 +81,13 @@ class ProfileScreen extends StatelessWidget {
                   alignment: WrapAlignment.center,
                   spacing: 20,
                   children: firebaseCrudProvider.achievemets
-                      .map((achievements) => CardLogro(model: achievements))
+                      .map((achievements) => CardLogro(
+                            model: achievements,
+                            has: (firebaseCrudProvider.user == null)
+                                ? false
+                                : firebaseCrudProvider.user!.logros
+                                    .contains(achievements.id),
+                          ))
                       .toList(),
                 ),
               ),
@@ -93,7 +99,12 @@ class ProfileScreen extends StatelessWidget {
                 thickness: 1,
               ),
               const SizedBox(height: 10),
-              Estadistics(name: 'Metres caminats', points: '0'),
+              Estadistics(
+                name: 'Caparrots obtinguts',
+                points: (firebaseCrudProvider.user == null)
+                    ? 0.toString()
+                    : firebaseCrudProvider.user!.caparrots.length.toString(),
+              ),
               Estadistics(name: 'Metres caminats', points: '0'),
               Estadistics(name: 'Metres caminats', points: '0'),
               const SizedBox(height: 10),

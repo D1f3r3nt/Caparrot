@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class CardLogro extends StatelessWidget {
   final AchievementModel model;
+  final bool has;
 
   const CardLogro({
     Key? key,
     required this.model,
+    required this.has,
   }) : super(key: key);
 
   @override
@@ -20,6 +22,9 @@ class CardLogro extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(3)),
             image: DecorationImage(
+              colorFilter: (has)
+                  ? null
+                  : const ColorFilter.mode(Colors.grey, BlendMode.saturation),
               image: NetworkImage(model.image),
             ),
           ),
