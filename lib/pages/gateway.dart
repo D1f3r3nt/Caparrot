@@ -27,6 +27,9 @@ class Gateway extends StatelessWidget {
     final _controller = Provider.of<SplashProvider>(context, listen: false);
 
     await _controller.checkPermission();
+    if (_controller.routeName! == 'home') {
+      Provider.of<MusicProvider>(context, listen: false).play2();
+    }
     Navigator.pushReplacementNamed(context, _controller.routeName!);
   }
 }
