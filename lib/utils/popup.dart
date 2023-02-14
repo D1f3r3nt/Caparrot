@@ -1,3 +1,7 @@
+import 'package:caparrot/models/achievement_model.dart';
+import 'package:caparrot/models/library_model.dart';
+import 'package:caparrot/utils/palete.dart';
+import 'package:caparrot/widgets/card_logro.dart';
 import 'package:flutter/material.dart';
 
 void popUpCredits(BuildContext context) {
@@ -30,8 +34,8 @@ bool popUpUbi(BuildContext context, dynamic function) {
     context: context,
     builder: (_) => AlertDialog(
       title: const Text("No se pudo recuperar la ubicacion."),
-      content: const Text("Para acceder a la aplicacion, deberá ir a ajustes"
-          "y autorizar ubicacion de manera manual."),
+      content: const Text(
+          "Para acceder a la aplicacion, deberá ir a ajustes y autorizar ubicacion de manera manual."),
       actions: [
         TextButton(
             onPressed: () async {
@@ -49,4 +53,73 @@ bool popUpUbi(BuildContext context, dynamic function) {
   );
 
   return response;
+}
+
+void popUpLibrary(BuildContext context, LibraryModel model) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        backgroundColor: Palete.white90,
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              model.title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Palete.black90,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              model.description,
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                color: Palete.black90,
+                fontSize: 15,
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+void popUpAchievements(BuildContext context, AchievementModel model) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        backgroundColor: Palete.white90,
+        title: CardLogro(model: model, has: true),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              model.title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Palete.black90,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              model.description,
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                color: Palete.black90,
+                fontSize: 15,
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }
