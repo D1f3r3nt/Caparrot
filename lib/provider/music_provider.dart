@@ -31,4 +31,12 @@ class MusicProvider extends ChangeNotifier {
   void volumeOn() async {
     await _music.setVolume(1);
   }
+
+  void resumeMusic() async {
+    await _music.resume();
+  }
+
+  void pauseMusic() async {
+    await _music.pause();
+  }
 }
