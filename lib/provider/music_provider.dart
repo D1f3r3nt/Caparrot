@@ -17,6 +17,7 @@ class MusicProvider extends ChangeNotifier {
 
   void play2() async {
     _music.setReleaseMode(ReleaseMode.loop);
+    
     await _music.play(AssetSource("homepagesong.mp3"));
   }
 

@@ -29,7 +29,7 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
     _subscription = _controller.onStatusChanged.listen((status) {
       if (status == PermissionStatus.granted) {
         Future.delayed(Duration.zero,
-            () => Navigator.pushReplacementNamed(context, 'home'));
+            () => Navigator.pushReplacementNamed(context, '/'));
       } else {
         _fromSettings = popUpUbi(context, openAppSettings());
       }
@@ -41,7 +41,7 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
     if (state == AppLifecycleState.resumed && _fromSettings) {
       final status = await _controller.check();
       if (status == PermissionStatus.granted) {
-        Navigator.pushReplacementNamed(context, 'home');
+        Navigator.pushReplacementNamed(context, '/');
       }
     }
     _fromSettings = false;

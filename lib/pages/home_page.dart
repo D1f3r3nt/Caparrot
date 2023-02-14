@@ -18,6 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin, WidgetsBindingObserver {
+      
   late Animation<double> _animation;
   late AnimationController _animationController;
   late bool _gpsEnabled;
@@ -26,6 +27,7 @@ class _HomePageState extends State<HomePage>
   StreamSubscription? _gpsSubscription;
   Position? _position;
 
+  
   late AppLifecycleState appLifecycleState;
 
   @override
@@ -33,14 +35,23 @@ class _HomePageState extends State<HomePage>
     appLifecycleState = state;
     setState(() {});
     super.didChangeAppLifecycleState(state);
+    var musicProvider = Provider.of<MusicProvider>(context, listen: false);
 
     if (state == AppLifecycleState.paused) {
-      Provider.of<MusicProvider>(context, listen: false).pauseMusic();
+      print("minimizado");
+      musicProvider.pauseMusic();
     }
 
     if (state == AppLifecycleState.resumed) {
-      Provider.of<MusicProvider>(context, listen: false).resumeMusic();
+      print("maximizado");
+      musicProvider.resumeMusic();
     }
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
   }
 
   @override
@@ -161,9 +172,9 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     // Musica
-    Provider.of<MusicProvider>(context).play2();
     // Progreso
     Provider.of<FirebaseCrudProvider>(context).getUser();
+    
 
     Random rnd;
 
