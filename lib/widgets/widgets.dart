@@ -6,3 +6,4 @@ export 'estadistics.dart';
 export 'gps_not_enabled.dart';
 export 'loading_page.dart';
 export 'maps.dart';
+export 'type_test.dart';
