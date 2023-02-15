@@ -105,8 +105,8 @@ class ProfileScreen extends StatelessWidget {
                     ? 0.toString()
                     : firebaseCrudProvider.user!.caparrots.length.toString(),
               ),
-              Estadistics(name: 'Metres caminats', points: '0'),
-              Estadistics(name: 'Metres caminats', points: '0'),
+              const Estadistics(name: 'Metres caminats', points: '0'),
+              const Estadistics(name: 'Metres caminats', points: '0'),
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),

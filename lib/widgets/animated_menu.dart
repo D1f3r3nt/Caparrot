@@ -25,50 +25,9 @@ class AnimatedMenu extends StatelessWidget {
           ? _animationController.reverse()
           : _animationController.forward(),
       items: [
-        Bubble(
-          title: "Caparrots",
-          iconColor: Palete.white90,
-          bubbleColor: Palete.green70,
-          icon: Icons.face,
-          titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
-          onPress: () {
-            Navigator.pushNamed(context, 'heads');
-            _animationController.reverse();
-          },
-        ),
-        Bubble(
-          title: "Inventari",
-          iconColor: Palete.white90,
-          bubbleColor: Palete.green70,
-          icon: Icons.inventory,
-          titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
-          onPress: () {
-            Navigator.pushNamed(context, 'inventory');
-            _animationController.reverse();
-          },
-        ),
-        Bubble(
-          title: "Usuari",
-          iconColor: Palete.white90,
-          bubbleColor: Palete.green70,
-          icon: Icons.person,
-          titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
-          onPress: () {
-            Navigator.pushNamed(context, 'profile');
-            _animationController.reverse();
-          },
-        ),
-        Bubble(
-          title: "Biblioteca",
-          iconColor: Palete.white90,
-          bubbleColor: Palete.green70,
-          icon: Icons.menu_book_rounded,
-          titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
-          onPress: () {
-            Navigator.pushNamed(context, 'library');
-            _animationController.reverse();
-          },
-        ),
+        _optionMenu(context, "Caparrots", Icons.face, 'heads'),
+        _optionMenu(context, "Usuari", Icons.person, 'profile'),
+        _optionMenu(context, "Biblioteca", Icons.menu_book_rounded, 'library'),
         Bubble(
           title: "Credits",
           iconColor: Palete.white90,
@@ -81,6 +40,21 @@ class AnimatedMenu extends StatelessWidget {
           },
         ),
       ],
+    );
+  }
+
+  Bubble _optionMenu(
+      BuildContext context, String title, IconData icon, String go) {
+    return Bubble(
+      title: title,
+      iconColor: Palete.white90,
+      bubbleColor: Palete.green70,
+      icon: icon,
+      titleStyle: const TextStyle(fontSize: 16, color: Colors.white),
+      onPress: () {
+        Navigator.pushNamed(context, go);
+        _animationController.reverse();
+      },
     );
   }
 }
