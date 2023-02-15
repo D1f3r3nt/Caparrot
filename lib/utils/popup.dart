@@ -1,7 +1,7 @@
 import 'package:caparrot/models/achievement_model.dart';
 import 'package:caparrot/models/library_model.dart';
 import 'package:caparrot/utils/palete.dart';
-import 'package:caparrot/widgets/card_logro.dart';
+import 'package:caparrot/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 void popUpCredits(BuildContext context) {
@@ -117,6 +117,47 @@ void popUpAchievements(BuildContext context, AchievementModel model) {
                 fontSize: 15,
               ),
             ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+void popUpTest(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        backgroundColor: Palete.white90,
+        title: const Center(
+          child: CircleAvatar(
+            backgroundImage: AssetImage('assets/jepeto.png'),
+          ),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Jepeto',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Palete.black90,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              'En que año se construyo el ayuntamiento?',
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                color: Palete.black90,
+                fontSize: 15,
+              ),
+            ),
+            const SizedBox(height: 10),
+            TypeTest(),
           ],
         ),
       );
