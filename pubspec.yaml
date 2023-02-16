@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   audioplayers: ^3.0.1
+  card_slider: ^1.0.5
   cloud_firestore: ^4.3.2
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.2.5
