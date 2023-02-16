@@ -99,6 +99,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  card_slider:
+    dependency: "direct main"
+    description:
+      name: card_slider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.5"
   change_app_package_name:
     dependency: "direct dev"
     description:
