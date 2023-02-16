@@ -31,7 +31,7 @@ class CapaHeadPage extends StatelessWidget {
                 ))),
         ModelViewer(
           backgroundColor: Color.fromRGBO(242, 236, 236, 0),
-          src: 'assets/ppp.glb', // a bundled asset file
+          src: 'assets/grouxo.glb', // a bundled asset file
 
           ar: false,
 
