@@ -19,7 +19,7 @@ class HeadPage extends StatelessWidget {
           ],
         ),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: Center(
           child: Text('Hola'),
         ),

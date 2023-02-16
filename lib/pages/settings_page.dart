@@ -23,6 +23,8 @@ class _SettingsPageState extends State<SettingsPage> {
     final TextEditingController _controller =
         TextEditingController(text: _user.displayName!);
 
+    volumen = musicProvider.playing;
+
     return Scaffold(
       backgroundColor: Palete.green50,
       appBar: AppBar(
@@ -73,12 +75,9 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               Switch(
                 value: volumen,
-                onChanged: (value) {
-                  setState(() {
-                    volumen = value;
-                  });
+                onChanged: (value) => setState(() {
                   value ? musicProvider.volumeOn() : musicProvider.volumenOff();
-                },
+                }),
               )
             ],
           ),

@@ -1,3 +1,4 @@
+import 'package:caparrot/preferences/preferences.dart';
 import 'package:caparrot/routes/routes.dart';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,6 +10,9 @@ void main() async {
   /* Para evitar que la pantalla se voltee */
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+  /* Para el preferences */
+  await Preferences.init();
 
   /*Para el auth*/
   await Firebase.initializeApp();

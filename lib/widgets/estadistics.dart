@@ -18,11 +18,14 @@ class Estadistics extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(name,
-              style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Palete.white90)),
+          Text(
+            name,
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Palete.white90,
+            ),
+          ),
           Text(points, style: TextStyle(fontSize: 25, color: Palete.white90))
         ],
       ),
