@@ -8,6 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 class Maps extends StatefulWidget {
   Position position;
   Set<Marker> markers;
+
   Maps({
     required this.position,
     required this.markers,
@@ -24,7 +25,6 @@ class _MapsState extends State<Maps> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     listenUbi();
   }

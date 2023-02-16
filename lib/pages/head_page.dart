@@ -15,14 +15,19 @@ class HeadPage extends StatelessWidget {
         title: Center(child: Text("Caparrots")),
       ),
       body: ListView(
-          children: [
-            CapaTag.Card("https://ponsport.com/wp-content/uploads/2016/12/008-1.png", "Groucho"),
-            
-            Divider(),
-              CapaTag.Card("https://perdidoenmallorca.files.wordpress.com/2015/01/dsc00469.jpg", "otro cabezon"),
-            Divider(),
-            CapaTag.Card("https://perdidoenmallorca.files.wordpress.com/2015/01/dsc00469.jpg", "otro cabezon"),
-          ],
+        children: [
+          CapaTag.Card(
+              "https://ponsport.com/wp-content/uploads/2016/12/008-1.png",
+              "Groucho"),
+          Divider(),
+          CapaTag.Card(
+              "https://perdidoenmallorca.files.wordpress.com/2015/01/dsc00469.jpg",
+              "otro cabezon"),
+          Divider(),
+          CapaTag.Card(
+              "https://perdidoenmallorca.files.wordpress.com/2015/01/dsc00469.jpg",
+              "otro cabezon"),
+        ],
       ),
     );
   }

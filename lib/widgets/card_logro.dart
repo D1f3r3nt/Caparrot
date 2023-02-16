@@ -1,4 +1,5 @@
 import 'package:caparrot/models/models.dart';
+import 'package:caparrot/utils/popup.dart';
 import 'package:flutter/material.dart';
 
 class CardLogro extends StatelessWidget {
@@ -29,24 +30,7 @@ class CardLogro extends StatelessWidget {
             ),
           ),
         ),
-        onTap: () => {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                backgroundColor: const Color.fromARGB(255, 129, 243, 178),
-                titleTextStyle: const TextStyle(
-                  color: Color.fromARGB(255, 255, 86, 86),
-                  fontSize: 20.0,
-                ),
-                contentTextStyle:
-                    const TextStyle(color: Color.fromARGB(255, 107, 8, 56)),
-                title: Text(model.title),
-                content: Text(model.description),
-              );
-            },
-          ),
-        },
+        onTap: () => popUpAchievements(context, model),
       ),
     );
   }

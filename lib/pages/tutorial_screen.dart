@@ -1,9 +1,9 @@
-import 'package:flutter/foundation.dart';
+import 'package:caparrot/preferences/preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-class IntroductionScreens extends StatelessWidget {
-  const IntroductionScreens({Key? key}) : super(key: key);
+class TutorialScreens extends StatelessWidget {
+  const TutorialScreens({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,8 @@ class IntroductionScreens extends StatelessWidget {
             ),
           ],
           onDone: () {
-            Navigator.pushReplacementNamed(context, 'home');
+            Preferences.isFirstTime = false;
+            Navigator.pushReplacementNamed(context, '/');
           },
           scrollPhysics: const ClampingScrollPhysics(),
           showDoneButton: true,

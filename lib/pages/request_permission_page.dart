@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:caparrot/utils/request_permission_controller.dart';
 import 'package:caparrot/utils/popup.dart';
+import 'package:caparrot/widgets/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -28,8 +28,8 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
 
     _subscription = _controller.onStatusChanged.listen((status) {
       if (status == PermissionStatus.granted) {
-        Future.delayed(Duration.zero,
-            () => Navigator.pushReplacementNamed(context, '/'));
+        Future.delayed(
+            Duration.zero, () => Navigator.pushReplacementNamed(context, '/'));
       } else {
         _fromSettings = popUpUbi(context, openAppSettings());
       }
@@ -58,15 +58,6 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          alignment: Alignment.center,
-          color: Colors.greenAccent,
-        ),
-      ),
-    );
+    return const Scaffold(body: LoadingPage());
   }
 }

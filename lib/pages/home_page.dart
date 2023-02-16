@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:caparrot/provider/provider.dart';
 import 'package:caparrot/widgets/maps.dart';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:caparrot/utils/utils.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import '../provider/provider.dart';
 import 'package:geolocator/geolocator.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,7 +18,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin, WidgetsBindingObserver {
-      
   late Animation<double> _animation;
   late AnimationController _animationController;
   late bool _gpsEnabled;
@@ -27,7 +26,6 @@ class _HomePageState extends State<HomePage>
   StreamSubscription? _gpsSubscription;
   Position? _position;
 
-  
   late AppLifecycleState appLifecycleState;
 
   @override
@@ -38,12 +36,10 @@ class _HomePageState extends State<HomePage>
     var musicProvider = Provider.of<MusicProvider>(context, listen: false);
 
     if (state == AppLifecycleState.paused) {
-      print("minimizado");
       musicProvider.pauseMusic();
     }
 
     if (state == AppLifecycleState.resumed) {
-      print("maximizado");
       musicProvider.resumeMusic();
     }
   }
@@ -56,7 +52,9 @@ class _HomePageState extends State<HomePage>
 
   @override
   void initState() {
+    // Añadir markers
     addmarker();
+
     WidgetsBinding.instance.addObserver(this);
     // Para la ubicacion
     verifyGps();
@@ -74,7 +72,7 @@ class _HomePageState extends State<HomePage>
     super.initState();
   }
 
-  Set<Marker> markerse = new Set<Marker>();
+  Set<Marker> markerse = Set<Marker>();
 
   void addmarker() async {
     var icon = BitmapDescriptor.fromBytes(
@@ -166,15 +164,14 @@ class _HomePageState extends State<HomePage>
         visible: true,
         icon: icon,
         onTap: () {}));
-    Provider.of<OkProvider>(context, listen: false).slectedMenuOpt = 1;
+
+    Provider.of<MarkerProvider>(context, listen: false).markers = 1;
   }
 
   @override
   Widget build(BuildContext context) {
-    // Musica
     // Progreso
     Provider.of<FirebaseCrudProvider>(context).getUser();
-    
 
     Random rnd;
 

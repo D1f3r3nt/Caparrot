@@ -1,4 +1,3 @@
-import 'package:caparrot/firebase/firebase.dart';
 import 'package:caparrot/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:caparrot/provider/provider.dart';
@@ -26,13 +25,16 @@ class _RegisterPageState extends State<RegisterPage>
     appLifecycleState = state;
     setState(() {});
     super.didChangeAppLifecycleState(state);
+    var musicProvider = Provider.of<MusicProvider>(context, listen: false);
 
+    // Minimizar
     if (state == AppLifecycleState.paused) {
-      Provider.of<MusicProvider>(context, listen: false).pauseMusic();
+      musicProvider.pauseMusic();
     }
 
+    // Maximizar
     if (state == AppLifecycleState.resumed) {
-      Provider.of<MusicProvider>(context, listen: false).resumeMusic();
+      musicProvider.resumeMusic();
     }
   }
 
