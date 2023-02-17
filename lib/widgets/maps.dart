@@ -25,7 +25,6 @@ class _MapsState extends State<Maps> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     listenUbi();
     showCaparrots();

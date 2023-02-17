@@ -7,8 +7,6 @@ class SplashProvider extends ChangeNotifier {
   final Permission _locationPermission = Permission.locationWhenInUse;
   String? _routeName;
 
-  SplashProvider();
-
   Future<void> checkPermission() async {
     final isGranted = await _locationPermission.isGranted;
     _routeName = isGranted ? 'home' : 'location_permission';

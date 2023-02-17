@@ -22,15 +22,15 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
     appLifecycleState = state;
     setState(() {});
     super.didChangeAppLifecycleState(state);
+    var musicProvider = Provider.of<MusicProvider>(context, listen: false);
 
+    //
     if (state == AppLifecycleState.paused) {
-      print("minimizado");
-      Provider.of<MusicProvider>(context, listen: false).pauseMusic();
+      musicProvider.pauseMusic();
     }
 
     if (state == AppLifecycleState.resumed) {
-      print("maximizado");
-      Provider.of<MusicProvider>(context, listen: false).resumeMusic();
+      musicProvider.resumeMusic();
     }
   }
 

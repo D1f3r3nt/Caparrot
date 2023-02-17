@@ -1,5 +1,4 @@
-import 'package:meta/meta.dart';
-import 'dart:convert';
+import 'package:caparrot/models/models.dart';
 
 class UserModel {
   UserModel({
