@@ -1,21 +1,29 @@
+import 'package:caparrot/models/head_model.dart';
 import 'package:caparrot/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 class CapaHeadPage extends StatelessWidget {
-  const CapaHeadPage({super.key});
+  late HeadModel headModel;
+  CapaHeadPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    headModel = ModalRoute.of(context)!.settings.arguments as HeadModel;
+
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("Grouxo"))),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Palete.green70,
+        title: Text(headModel.name),
+      ),
       body: Stack(children: <Widget>[
         Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
-              end: Alignment(0.8, 1),
-              colors: [Colors.green, Colors.yellow],
+              end: const Alignment(0.8, 1),
+              colors: [Palete.green50, Palete.black50],
               tileMode: TileMode.mirror,
             ),
           ),
@@ -25,15 +33,16 @@ class CapaHeadPage extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(20.0),
             child: Text(
-              'GROUXO',
+              headModel.name.toUpperCase(),
               style: TextStyle(
-                  fontSize: 75.0, color: Color.fromRGBO(0, 0, 0, 0.368)),
+                fontSize: 75.0,
+                color: Palete.black90,
+              ),
             ),
           ),
         ),
         ModelViewer(
-          backgroundColor: Color.fromRGBO(242, 236, 236, 0),
-          src: 'assets/grouxo.glb', // a bundled asset file
+          src: 'assets/modelos3d/${headModel.tresD}', // a bundled asset file
           ar: false,
           autoRotate: true,
           cameraControls: true,

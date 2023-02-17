@@ -1,12 +1,11 @@
+import 'package:caparrot/models/head_model.dart';
 import 'package:caparrot/utils/palete.dart';
 import 'package:flutter/material.dart';
 
 class CapaTag extends StatelessWidget {
-  String url;
-  String nom;
+  HeadModel model;
   CapaTag({
-    required this.url,
-    required this.nom,
+    required this.model,
   });
 
   @override
@@ -16,7 +15,7 @@ class CapaTag extends StatelessWidget {
       width: size.width,
       height: size.height * 0.5,
       child: GestureDetector(
-        onTap: () => {print(nom)},
+        onTap: () => Navigator.pushNamed(context, 'tresD', arguments: model),
         child: Center(
             child: Container(
           width: size.width * 0.9,
@@ -34,14 +33,14 @@ class CapaTag extends StatelessWidget {
                   height: size.width * 0.7,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(url),
+                        image: AssetImage('assets/caparrots/${model.image}'),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(40),
                       border: Border.all(color: Colors.white, width: 2)),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.only(top: 10),
                   width: size.width * 0.8,
                   height: size.width * 0.15,
                   decoration: BoxDecoration(
@@ -53,7 +52,7 @@ class CapaTag extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      nom,
+                      model.name,
                       style: TextStyle(
                           color: Palete.black90,
                           fontSize: 30,

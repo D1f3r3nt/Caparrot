@@ -1,3 +1,4 @@
+import 'package:caparrot/pages/caparrot_head_page.dart';
 import 'package:caparrot/pages/pages.dart';
 import 'package:flutter/material.dart';
 
@@ -12,5 +13,6 @@ Map<String, WidgetBuilder> getRoutes = {
   'new_password': (context) => NewPassword(),
   'settings': (context) => SettingsPage(),
   'location_permission': (context) => RequestPermissionPage(),
-  'tutorial': (context) => TutorialScreens()
+  'tutorial': (context) => TutorialScreens(),
+  'tresD': (context) => CapaHeadPage(),
 };

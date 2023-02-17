@@ -6,6 +6,7 @@ class HeadModel {
     required this.latitude,
     required this.longitude,
     required this.markerImage,
+    required this.tresD,
     required this.image,
     required this.historia,
     required this.pregunta,
@@ -18,6 +19,7 @@ class HeadModel {
   double latitude;
   double longitude;
   String markerImage;
+  String tresD;
   String image;
   String historia;
   String pregunta;
@@ -34,6 +36,7 @@ class HeadModel {
         latitude: json["latitude"]?.toDouble(),
         longitude: json["longitude"]?.toDouble(),
         markerImage: json["markerImage"],
+        tresD: json["tresD"],
         image: json["image"],
         historia: json["historia"],
         pregunta: json["pregunta"],
@@ -47,6 +50,7 @@ class HeadModel {
         "latitude": latitude,
         "longitude": longitude,
         "markerImage": markerImage,
+        "tresD": tresD,
         "image": image,
         "historia": historia,
         "pregunta": pregunta,
