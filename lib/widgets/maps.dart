@@ -27,6 +27,7 @@ class _MapsState extends State<Maps> {
   void initState() {
     super.initState();
     listenUbi();
+    showCaparrots();
   }
 
   @override
@@ -108,5 +109,22 @@ class _MapsState extends State<Maps> {
         ));
       }
     });
+
+  }
+
+  void showCaparrots() {
+    for (Marker marks in widget.markers) {
+      if (Geolocator.distanceBetween(
+          widget.position.latitude, widget.position.longitude,
+          marks.position.latitude, marks.position.longitude) < 20) {
+        print("caparrote trobated");
+    //No se puede cambiar propiedad, debemos crear copia e igualar
+        setState(() {
+          marks = marks.copyWith(
+            visibleParam: !marks.visible,
+          );
+        });
+      }
+    }
   }
 }

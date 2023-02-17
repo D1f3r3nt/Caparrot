@@ -226,8 +226,8 @@ class _HomePageState extends State<HomePage>
     setState(() {
       _gpsEnabled = _gps;
       _currentLocation = true;
-      _gpsSubscription =
-          Geolocator.getServiceStatusStream().listen((status) async {
+
+      _gpsSubscription = Geolocator.getServiceStatusStream().listen((status) async {
         _gpsEnabled = status == ServiceStatus.enabled;
         _position = await Geolocator.getLastKnownPosition();
       });
