@@ -13,13 +13,13 @@ class MusicProvider extends ChangeNotifier {
 
   void play() async {
     _music.setReleaseMode(ReleaseMode.loop);
-    await _music.play(AssetSource("caparrots.mp3"));
+    await _music.play(AssetSource("music/caparrots.mp3"));
     playing = true;
   }
 
   void play2() async {
     _music.setReleaseMode(ReleaseMode.loop);
-    await _music.play(AssetSource("homepagesong.mp3"));
+    await _music.play(AssetSource("music/homepagesong.mp3"));
     playing = true;
   }
 

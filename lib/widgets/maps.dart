@@ -22,12 +22,13 @@ class _MapsState extends State<Maps> {
   late CameraPosition _myPosition;
   GoogleMapController? _controller;
   bool _modifyPosition = true;
+  late List<Marker> markers;
 
   @override
   void initState() {
     super.initState();
     listenUbi();
-    showCaparrots();
+    markers = widget.markers.toList();
   }
 
   @override
@@ -41,7 +42,7 @@ class _MapsState extends State<Maps> {
     return Stack(
       children: [
         GoogleMap(
-          markers: widget.markers,
+          markers: markers.toSet(),
           myLocationEnabled: true,
           mapType: MapType.normal,
           initialCameraPosition: _myPosition,
@@ -80,7 +81,7 @@ class _MapsState extends State<Maps> {
   }
 
   changeMapMode() {
-    getJsonFile("assets/map_style.json").then(setMapStyle);
+    getJsonFile("assets/mapstyle/map_style.json").then(setMapStyle);
   }
 
   Future<String> getJsonFile(String path) async {
@@ -107,24 +108,22 @@ class _MapsState extends State<Maps> {
             tilt: 60,
           ),
         ));
+
+        showCaparrots(position);
       }
     });
-
   }
 
-  void showCaparrots() {
-    for (Marker marks in widget.markers) {
-      if (Geolocator.distanceBetween(
-          widget.position.latitude, widget.position.longitude,
-          marks.position.latitude, marks.position.longitude) < 20) {
-        print("caparrote trobated");
-    //No se puede cambiar propiedad, debemos crear copia e igualar
-        setState(() {
-          marks = marks.copyWith(
-            visibleParam: !marks.visible,
-          );
-        });
-      }
-    }
-  }
+  void showCaparrots(Position position) => setState(() {
+        markers = markers
+            .map((marks) => (Geolocator.distanceBetween(
+                        position.latitude,
+                        position.longitude,
+                        marks.position.latitude,
+                        marks.position.longitude) <
+                    50)
+                ? marks.copyWith(visibleParam: true)
+                : marks.copyWith(visibleParam: false))
+            .toList();
+      });
 }

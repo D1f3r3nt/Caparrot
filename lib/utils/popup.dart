@@ -1,4 +1,5 @@
 import 'package:caparrot/models/achievement_model.dart';
+import 'package:caparrot/models/head_model.dart';
 import 'package:caparrot/models/library_model.dart';
 import 'package:caparrot/utils/palete.dart';
 import 'package:caparrot/widgets/widgets.dart';
@@ -124,22 +125,22 @@ void popUpAchievements(BuildContext context, AchievementModel model) {
   );
 }
 
-void popUpTest(BuildContext context) {
+void popUpTest(BuildContext context, HeadModel model) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
         backgroundColor: Palete.white90,
-        title: const Center(
+        title: Center(
           child: CircleAvatar(
-            backgroundImage: AssetImage('assets/jepeto.png'),
+            backgroundImage: AssetImage('assets/caparrots/${model.image}'),
           ),
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Jepeto',
+              model.name,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Palete.black90,
@@ -149,7 +150,7 @@ void popUpTest(BuildContext context) {
             ),
             const SizedBox(height: 10),
             Text(
-              'En que año se construyo el ayuntamiento?',
+              model.pregunta,
               textAlign: TextAlign.justify,
               style: TextStyle(
                 color: Palete.black90,
@@ -157,7 +158,7 @@ void popUpTest(BuildContext context) {
               ),
             ),
             const SizedBox(height: 10),
-            TypeTest(),
+            TypeTest(model: model),
           ],
         ),
       );

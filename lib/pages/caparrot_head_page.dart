@@ -21,20 +21,20 @@ class CapaHeadPage extends StatelessWidget {
           ),
         ),
         RotatedBox(
-            quarterTurns: 1,
-            child: Container(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                  'GROUXO',
-                  style: TextStyle(
-                      fontSize: 75.0, color: Color.fromRGBO(0, 0, 0, 0.368)),
-                ))),
+          quarterTurns: 1,
+          child: Container(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              'GROUXO',
+              style: TextStyle(
+                  fontSize: 75.0, color: Color.fromRGBO(0, 0, 0, 0.368)),
+            ),
+          ),
+        ),
         ModelViewer(
           backgroundColor: Color.fromRGBO(242, 236, 236, 0),
           src: 'assets/grouxo.glb', // a bundled asset file
-
           ar: false,
-
           autoRotate: true,
           cameraControls: true,
           disableZoom: true,

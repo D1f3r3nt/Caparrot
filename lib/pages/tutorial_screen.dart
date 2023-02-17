@@ -14,34 +14,34 @@ class TutorialScreens extends StatelessWidget {
               title: 'Debes de estar en Sa Pobla',
               body:
                   'Para el uso de esta aplicacion es necesario que estes en Sa Pobla. Ve al ayuntamiento, ahi estara el comienzo de todo',
-              image: buildImage("assets/Sa_Pobla.png"),
+              image: buildImage("assets/tutorial/Sa_Pobla.png"),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Ayuntamiento de Sa Pobla',
               body: 'Para comenzar es necesario dirigirse al ayuntamiento',
-              image: buildImage("assets/ayuntamiento.jpg"),
+              image: buildImage("assets/tutorial/ayuntamiento.jpg"),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Captura de caparrots',
               body:
                   'Si encuentras algun caparrot haz click sobre el y contesta la pregunta correctamente para capturarlo',
-              image: buildImage("assets/caparrot.png"),
+              image: buildImage("assets/tutorial/caparrot.png"),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Pistas',
               body:
                   'Ten en cuenta las pistas para encontrar los caparrots, dichas pistas estaran por Sa Pobla',
-              image: buildImage("assets/papiro.png"),
+              image: buildImage("assets/tutorial/papiro.png"),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Obten los todos los caparrots',
               body:
                   '11 caparrots estan escondidos por Sa Pobla obtenlos todos para ganar',
-              image: buildImage("assets/caparrots.png"),
+              image: buildImage("assets/tutorial/caparrots.png"),
               decoration: getPageDecoration(),
             ),
           ],
