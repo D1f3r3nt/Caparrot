@@ -1,6 +1,7 @@
 import 'package:caparrot/firebase/database/achievements_db.dart';
 import 'package:caparrot/firebase/database/library_db.dart';
 import 'package:caparrot/firebase/database/users_db.dart';
+import 'package:caparrot/models/head_model.dart';
 import 'package:caparrot/models/library_model.dart';
 import 'package:caparrot/models/models.dart';
 import 'package:flutter/material.dart';
@@ -31,5 +32,13 @@ class FirebaseCrudProvider extends ChangeNotifier {
 
   void logout() {
     user = null;
+  }
+
+  void addHead(HeadModel model) {
+    _usersDb.addHead(user!, model);
+  }
+
+  void addLibrary(LibraryModel model) {
+    _usersDb.addLibrary(user!, model);
   }
 }

@@ -78,12 +78,17 @@ class _HomePageState extends State<HomePage>
           'assets/markers/${element.markerImage}',
           width: 200));
 
-      markerse.add(Marker(
+      markerse.add(
+        Marker(
           markerId: MarkerId(element.name),
           position: LatLng(element.latitude, element.longitude),
           visible: false,
           icon: icon,
-          onTap: () => popUpTest(context, element)));
+          onTap: () {
+            popUpHistory(context, element);
+          },
+        ),
+      );
     });
   }
 

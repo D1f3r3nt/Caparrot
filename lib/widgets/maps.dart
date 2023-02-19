@@ -33,6 +33,8 @@ class _MapsState extends State<Maps> {
 
   @override
   Widget build(BuildContext context) {
+    print("==> ${markers[0].visible}");
+
     _myPosition = CameraPosition(
       target: LatLng(widget.position.latitude, widget.position.longitude),
       zoom: 18,
@@ -121,7 +123,7 @@ class _MapsState extends State<Maps> {
                         position.longitude,
                         marks.position.latitude,
                         marks.position.longitude) <
-                    50)
+                    100)
                 ? marks.copyWith(visibleParam: true)
                 : marks.copyWith(visibleParam: false))
             .toList();

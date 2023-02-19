@@ -1,5 +1,8 @@
 import 'package:caparrot/models/head_model.dart';
+import 'package:caparrot/provider/provider.dart';
 import 'package:caparrot/utils/palete.dart';
+import 'package:caparrot/utils/popup.dart';
+import 'package:caparrot/utils/snackbar.dart';
 import 'package:flutter/material.dart';
 
 class TypeTest extends StatefulWidget {
@@ -18,6 +21,8 @@ class _TypeTestState extends State<TypeTest> {
 
   @override
   Widget build(BuildContext context) {
+    var firebaseCrudProvider = Provider.of<FirebaseCrudProvider>(context);
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -41,10 +46,13 @@ class _TypeTestState extends State<TypeTest> {
           textColor: Palete.white90,
           onPressed: () {
             if (_value == widget.model.indexRespuesta.toString()) {
-              print('Super okey');
+              firebaseCrudProvider.addHead(widget.model);
+              Snackbar.correctSnackbar(context, 'Caparrot obtenido');
             } else {
-              print('BAD');
+              Snackbar.errorSnackbar(context, 'Has fallado');
             }
+            Navigator.pop(context);
+            popUpContinue(context, widget.model);
           },
           child: const Text('Enviar'),
         )

@@ -8,14 +8,16 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final _user = FirebaseAuth.instance.currentUser!;
+    final _user = FirebaseAuth.instance.currentUser;
     final authProvider =
         Provider.of<AuthenticationProvider>(context, listen: false);
     final firebaseCrudProvider = Provider.of<FirebaseCrudProvider>(context);
     firebaseCrudProvider.getAchievements();
 
-    final String imageUrl = _user.photoURL ??
-        'https://firebasestorage.googleapis.com/v0/b/caparrot-87657.appspot.com/o/user.png?alt=media&token=3321d148-9e7c-4d27-82b2-22919c5c4921';
+    final String imageUrl = (_user != null)
+        ? _user.photoURL ??
+            'https://firebasestorage.googleapis.com/v0/b/caparrot-87657.appspot.com/o/user.png?alt=media&token=3321d148-9e7c-4d27-82b2-22919c5c4921'
+        : 'https://firebasestorage.googleapis.com/v0/b/caparrot-87657.appspot.com/o/user.png?alt=media&token=3321d148-9e7c-4d27-82b2-22919c5c4921';
 
     void _onLogOut() {
       authProvider.logout(context);
@@ -61,8 +63,10 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      _user.displayName ?? _user.email!,
+                      (_user != null) ? _user.displayName ?? _user.email! : '',
                       style: TextStyle(fontSize: 25, color: Palete.white20),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
                     )
                   ],
                 ),

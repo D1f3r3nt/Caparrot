@@ -2,6 +2,7 @@ import 'dart:convert';
 
 class HeadModel {
   HeadModel({
+    required this.id,
     required this.name,
     required this.latitude,
     required this.longitude,
@@ -15,6 +16,7 @@ class HeadModel {
     required this.headModelContinue,
   });
 
+  int id;
   String name;
   double latitude;
   double longitude;
@@ -32,6 +34,7 @@ class HeadModel {
   String toJson() => json.encode(toMap());
 
   factory HeadModel.fromMap(Map<String, dynamic> json) => HeadModel(
+        id: json["id"],
         name: json["name"],
         latitude: json["latitude"]?.toDouble(),
         longitude: json["longitude"]?.toDouble(),
@@ -46,6 +49,7 @@ class HeadModel {
       );
 
   Map<String, dynamic> toMap() => {
+        "id": id,
         "name": name,
         "latitude": latitude,
         "longitude": longitude,

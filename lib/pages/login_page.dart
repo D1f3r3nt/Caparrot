@@ -46,6 +46,7 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     Provider.of<MusicProvider>(context).play();
+    Provider.of<FirebaseCrudProvider>(context).logout();
     final authProvider =
         Provider.of<AuthenticationProvider>(context, listen: false);
 

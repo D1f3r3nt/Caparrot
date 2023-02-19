@@ -1,12 +1,13 @@
 [
     {
+        "id": 1,
         "name": "Grouxo",
         "latitude": 39.769769,
         "longitude": 3.024726,
         "markerImage": "grouxo.png",
         "tresD": "grouxo.glb",
         "image": "grouxo.png", 
-        "historia": "Bienvenido joven, supongo que estás aquí para ser el nuevo caparrot… Lamentablemente para ti, no es tarea fácil.Primero deberás encontrar a todos los integrantes, somos 11 contando conmigo.Pero antes de todo deberás responder a una de mis preguntas.",
+        "historia": "Bienvenido joven, supongo que estás aquí para ser el nuevo caparrot… Lamentablemente para ti, no es tarea fácil.Primero deberás encontrar a todos los integrantes, somos 11 contando conmigo. Pero antes de todo deberás responder a una de mis preguntas.",
         "pregunta": "¿Cuál de estas afirmaciones sobre los Caparrots es verdadera?",
         "respuestas": [
             "Somos conocidos por nuestras celebraciones del mes de diciembre",
@@ -18,6 +19,7 @@
         "continue": "Veamos si puedes convencer al resto de caparrots, alguien te espera en una plaza en honor a la segunda guerra mundial."
     },
     {
+        "id": 2,
         "name": "Es negret",
         "latitude": 39.772571,
         "longitude": 3.017440,
@@ -36,6 +38,7 @@
         "continue": "Una de mis compañeras te espera en una sala de juegos infantil muy conocida, cómo se llamaba, Jocs…"
     },
     {
+        "id": 3,
         "name": "Charlotte",
         "latitude": 39.767288,
         "longitude": 3.019917,
@@ -54,6 +57,7 @@
         "continue": "Hora de seguir con tu búsqueda, recuerdo escuchar a Negreta algo sobre aprender a patinar…"
     },
     {
+        "id": 4,
         "name": "Negreta",
         "latitude": 39.774360,
         "longitude": 3.026629,
@@ -72,13 +76,14 @@
         "continue": "Debo seguir practicando, si quieres seguir hablando habla con el Guardia vell, suele encontrarse cerca del cuartel de la policia."
     },
     {
+        "id": 5,
         "name": "Guardia vell",
         "latitude": 39.770432,
         "longitude": 3.028005,
         "markerImage": "guardia.png",
         "tresD": "guardia1.glb",
         "image": "guardia.png", 
-        "historia": "",
+        "historia": "Buenas joven, me encontraba patruyando las calles y he decidido descansar un rato.",
         "pregunta": "¿Cuál es el propósito principal de la policía?",
         "respuestas": [
             "Proteger del viento",
@@ -87,16 +92,17 @@
             "Patrullar la ciudad"
         ],
         "indexRespuesta": 1,
-        "continue": ""
+        "continue": "Mientras patrullaba he visto a Harpo en la Escuela Infantil, se llama Ei ..."
     },
     {
+        "id": 6,
         "name": "Harpo",
         "latitude": 39.767952,
         "longitude": 3.017169,
         "markerImage": "marx2.png",
         "tresD": "harpo.glb",
         "image": "marx2.png", 
-        "historia": "",
+        "historia": "Buenas joven, estaba jugando un rato con los niños",
         "pregunta": "¿Cuál es mi papel en los caparrots?",
         "respuestas": [
             "Inventor",
@@ -105,16 +111,17 @@
             "Vendedor"
         ],
         "indexRespuesta": 0,
-        "continue": "Ahora ves a la guardia civil"
+        "continue": "Ahora ves a la guardia civil, alomejor esta el Guardia Jove"
     },
     {
+        "id": 7,
         "name": "Guardia Jove",
         "latitude": 39.773200,
         "longitude": 3.015913,
         "markerImage": "guardia2.png",
         "tresD": "guardia2.glb",
         "image": "guardia2.png", 
-        "historia": "",
+        "historia": "Buenas que buen dia que hace",
         "pregunta": "Seguro que el Guardia vell te ha hecho alguna pregunta sobre la policía, pero no te ha preguntado por nuestra función… sabes cuál es?",
         "respuestas": [
             "Vigilar que no hi hagi cap tipus d’incident durant els balls que realitzen la resta de caparrots",
@@ -126,6 +133,7 @@
         "continue": "Hora de ir a ver al payaso, suele estar por la antigua estación de tren, puede ser muy divertido, pero no lo hagas enfadar…"
     },
     {
+        "id": 8,
         "name": "Pallaso vermell",
         "latitude": 39.766295,
         "longitude": 3.028885,
@@ -144,6 +152,7 @@
         "continue": "Ah, si.. el último caparrot que recuerdo es chico, me dijo algo sobre la escuela graduada… con lo que le gusta divertirse a este chico jejejeje"
     },
     {
+        "id": 9,
         "name": "Chico",
         "latitude": 39.772593,
         "longitude": 3.023394,
@@ -162,13 +171,14 @@
         "continue": "Deberías hablar con Gepeto, se encuentra en la entrada al pueblo, aquella con un cartel grande estilo Hollywood"
     },
     {
+        "id": 10,
         "name": "Gepeto",
         "latitude": 39.7723900,
         "longitude": 3.0142323,
         "markerImage": "jepeto.png",
         "tresD": "jepeto.glb",
         "image": "jepeto.png", 
-        "historia": "",
+        "historia": "Que buen cartel, se parece al de Hollywood, aunque creo que no lo he visto nunca...",
         "pregunta": "Bienvenidos! Así que Chico os ha hablado de la tamborada… estoy muy orgulloso de participar en esas emblemáticas festividades.Sabrías decirme cuantos dias dura exactamente?",
         "respuestas": [
             "Un día entero",
@@ -177,24 +187,25 @@
             "Toda una semana"
         ],
         "indexRespuesta": 1,
-        "continue": "Deberías hablar con Turc, siempre está a las afueras, en otra rotonda como esta, no muy lejos de Negreta"
+        "continue": "Deberías hablar con Turc, siempre está a las afueras, en otra rotonda como esta, no muy lejos de Negreta, se que tenia un Bazar Chino cerca"
     },
     {
+        "id": 11,
         "name": "Es Turc",
         "latitude": 39.7719045,
         "longitude": 3.0304000,
         "markerImage": "turco.png",
         "tresD": "turco.glb",
         "image": "turco.png", 
-        "historia": "",
-        "pregunta": "Bienvenidos! Así que Chico os ha hablado de la tamborada… estoy muy orgulloso de participar en esas emblemáticas festividades.Sabrías decirme cuantos dias dura exactamente?",
+        "historia": "Si has seguido los pasos de mis compañeros, soy el último caparrot que encontrarás, ¿te gusta mi traje tradicional? Vale, supongo que has venido hasta aquí con un motivo, pero mi pregunta no tiene nada que ver con las demás, hablemos de gastronomía.",
+        "pregunta": "Cual es el plato más típico de la cocina de sa pobla",
         "respuestas": [
-            "Un día entero",
-            "Dos Dias",
-            "Tres días",
-            "Toda una semana"
+            "Paella",
+            "Tumbet",
+            "Frito Mallorquin",
+            "Arroz Brut"
         ],
         "indexRespuesta": 1,
-        "continue": "Deberías hablar con Turc, siempre está a las afueras, en otra rotonda como esta, no muy lejos de Negreta"
+        "continue": "Gracias por jugar con nosotros, si no has convencido a alguien ves a buscarlo y convencelo"
     }
 ]

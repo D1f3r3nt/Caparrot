@@ -27,7 +27,7 @@ class TutorialScreens extends StatelessWidget {
               title: 'Captura de caparrots',
               body:
                   'Si encuentras algun caparrot haz click sobre el y contesta la pregunta correctamente para capturarlo',
-              image: buildImage("assets/tutorial/caparrot.png"),
+              image: buildImage("assets/markers/grouxo.png"),
               decoration: getPageDecoration(),
             ),
             PageViewModel(

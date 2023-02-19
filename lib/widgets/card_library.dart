@@ -1,4 +1,5 @@
 import 'package:caparrot/models/library_model.dart';
+import 'package:caparrot/provider/provider.dart';
 import 'package:caparrot/utils/palete.dart';
 import 'package:caparrot/utils/popup.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class CardLibrary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var firebaseCrudProvider = Provider.of<FirebaseCrudProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
@@ -43,7 +45,10 @@ class CardLibrary extends StatelessWidget {
             ),
           ),
         ),
-        onTap: () => popUpLibrary(context, model),
+        onTap: () {
+          popUpLibrary(context, model);
+          firebaseCrudProvider.addLibrary(model);
+        },
       ),
     );
   }
