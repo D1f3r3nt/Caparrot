@@ -1,9 +1,7 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:caparrot/provider/head_provider.dart';
 import 'package:caparrot/provider/provider.dart';
-import 'package:caparrot/widgets/maps.dart';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:caparrot/utils/utils.dart';
@@ -102,23 +100,7 @@ class _HomePageState extends State<HomePage>
       headProvider.getData();
     }
 
-    Random rnd;
-
     addmarker(headProvider);
-
-    // Markers aleatorios por SaPobla
-    /*for (int i = 0; i < 10; i++) {
-      rnd = Random();
-      double num = rnd.nextDouble() * (39.774562 - 39.764581) + 39.764581;
-      double num2 = rnd.nextDouble() * (3.028013 - 3.019063) + 3.019063;
-      markers.add(
-        Marker(
-            markerId: MarkerId('marker-$i'),
-            position: LatLng(num, num2),
-            visible: true,
-            onTap: () {}),
-      );
-    }*/
 
     if (_currentLocation) {
       if (!_gpsEnabled) {

@@ -62,11 +62,16 @@ class ProfileScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      (_user != null) ? _user.displayName ?? _user.email! : '',
-                      style: TextStyle(fontSize: 25, color: Palete.white20),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
+                    Expanded(
+                      child: Text(
+                        (_user != null)
+                            ? _user.displayName ?? _user.email!
+                            : '',
+                        style: TextStyle(fontSize: 25, color: Palete.white20),
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                        maxLines: 1,
+                      ),
                     )
                   ],
                 ),
@@ -109,8 +114,18 @@ class ProfileScreen extends StatelessWidget {
                     ? 0.toString()
                     : firebaseCrudProvider.user!.caparrots.length.toString(),
               ),
-              const Estadistics(name: 'Metres caminats', points: '0'),
-              const Estadistics(name: 'Metres caminats', points: '0'),
+              Estadistics(
+                name: 'Histories llegides',
+                points: (firebaseCrudProvider.user == null)
+                    ? 0.toString()
+                    : firebaseCrudProvider.user!.biblioteca.length.toString(),
+              ),
+              Estadistics(
+                name: 'Logros obtinguts',
+                points: (firebaseCrudProvider.user == null)
+                    ? 0.toString()
+                    : firebaseCrudProvider.user!.logros.length.toString(),
+              ),
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),

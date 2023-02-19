@@ -10,6 +10,7 @@ class HeadPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var headProvider = Provider.of<HeadProvider>(context);
+    var firebaseCrudProvider = Provider.of<FirebaseCrudProvider>(context);
 
     return Scaffold(
       backgroundColor: Palete.black50,
@@ -26,7 +27,14 @@ class HeadPage extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: headProvider.heads.map((e) => CapaTag(model: e)).toList(),
+        children: headProvider.heads
+            .map(
+              (e) => CapaTag(
+                model: e,
+                enable: firebaseCrudProvider.user!.caparrots.contains(e.id),
+              ),
+            )
+            .toList(),
       ),
     );
   }

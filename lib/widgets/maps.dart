@@ -33,8 +33,6 @@ class _MapsState extends State<Maps> {
 
   @override
   Widget build(BuildContext context) {
-    print("==> ${markers[0].visible}");
-
     _myPosition = CameraPosition(
       target: LatLng(widget.position.latitude, widget.position.longitude),
       zoom: 18,

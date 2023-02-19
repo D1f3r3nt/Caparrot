@@ -1,7 +1,7 @@
 name: caparrot
 description: Caparrot's pubspec
 publish_to: "none"
-version: 0.0.1
+version: 1.0.0-alpha
 
 environment:
   sdk: ">=2.18.6 <3.0.0"
