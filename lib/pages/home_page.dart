@@ -1,8 +1,7 @@
 import 'dart:async';
-import 'dart:math';
 
+import 'package:caparrot/provider/head_provider.dart';
 import 'package:caparrot/provider/provider.dart';
-import 'package:caparrot/widgets/maps.dart';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:caparrot/utils/utils.dart';
@@ -52,9 +51,6 @@ class _HomePageState extends State<HomePage>
 
   @override
   void initState() {
-    // Añadir markers
-    addmarker();
-
     WidgetsBinding.instance.addObserver(this);
     // Para la ubicacion
     verifyGps();
@@ -74,122 +70,37 @@ class _HomePageState extends State<HomePage>
 
   Set<Marker> markerse = Set<Marker>();
 
-  void addmarker() async {
-    var icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/grouxo.png', width: 200));
+  void addmarker(HeadProvider headProvider) async {
+    headProvider.heads.forEach((element) async {
+      var icon = BitmapDescriptor.fromBytes(await assetToBytes(
+          'assets/markers/${element.markerImage}',
+          width: 200));
 
-    markerse.add(Marker(
-        markerId: MarkerId('Groucho'),
-        position: LatLng(39.769769, 3.024726),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/pallaso1.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('Pallaso1'),
-        position: LatLng(39.767288, 3.019917),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/moro1.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('moro1'),
-        position: LatLng(39.772571, 3.017440),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/pallaso2.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('pallaso2.png'),
-        position: LatLng(39.766295, 3.028885),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/moro2.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('moro2'),
-        position: LatLng(39.774360, 3.026629),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/jepeto.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('jepeto'),
-        position: LatLng(39.7723900, 3.0142323),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/turco.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('turco'),
-        position: LatLng(39.7719045, 3.0304000),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/guardia.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('guardia'),
-        position: LatLng(39.770432, 3.028005),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/guardia2.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('guardia2'),
-        position: LatLng(39.773200, 3.015913),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/marx1.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('marx1'),
-        position: LatLng(39.772593, 3.023394),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-    icon = BitmapDescriptor.fromBytes(
-        await assetToBytes('assets/marx2.png', width: 200));
-    markerse.add(Marker(
-        markerId: MarkerId('marx2'),
-        position: LatLng(39.767952, 3.017169),
-        visible: true,
-        icon: icon,
-        onTap: () {}));
-
-    Provider.of<MarkerProvider>(context, listen: false).markers = 1;
+      markerse.add(
+        Marker(
+          markerId: MarkerId(element.name),
+          position: LatLng(element.latitude, element.longitude),
+          visible: false,
+          icon: icon,
+          onTap: () {
+            popUpHistory(context, element);
+          },
+        ),
+      );
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     // Progreso
     Provider.of<FirebaseCrudProvider>(context).getUser();
+    // Progreso
+    var headProvider = Provider.of<HeadProvider>(context);
+    if (headProvider.heads.isEmpty) {
+      headProvider.getData();
+    }
 
-    Random rnd;
-
-    addmarker();
-
-    // Markers aleatorios por SaPobla
-    /*for (int i = 0; i < 10; i++) {
-      rnd = Random();
-      double num = rnd.nextDouble() * (39.774562 - 39.764581) + 39.764581;
-      double num2 = rnd.nextDouble() * (3.028013 - 3.019063) + 3.019063;
-      markers.add(
-        Marker(
-            markerId: MarkerId('marker-$i'),
-            position: LatLng(num, num2),
-            visible: true,
-            onTap: () {}),
-      );
-    }*/
+    addmarker(headProvider);
 
     if (_currentLocation) {
       if (!_gpsEnabled) {
@@ -227,7 +138,8 @@ class _HomePageState extends State<HomePage>
       _gpsEnabled = _gps;
       _currentLocation = true;
 
-      _gpsSubscription = Geolocator.getServiceStatusStream().listen((status) async {
+      _gpsSubscription =
+          Geolocator.getServiceStatusStream().listen((status) async {
         _gpsEnabled = status == ServiceStatus.enabled;
         _position = await Geolocator.getLastKnownPosition();
       });
