@@ -58,7 +58,7 @@ class EmailAuth {
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
     Snackbar.correctSnackbar(
       context,
-      'Se ha enviado un email con los pasos a seguir',
+      'Se ha enviado un email con los pasos a seguir, revise su bandeja de entrada',
     );
   }
 }

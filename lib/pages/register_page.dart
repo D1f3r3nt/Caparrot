@@ -114,13 +114,13 @@ class _RegisterPageState extends State<RegisterPage>
                               borderSide: BorderSide(
                                   color: Palete.green70,
                                   width: 3,
-                                  strokeAlign: StrokeAlign.center),
+                                  strokeAlign: BorderSide.strokeAlignCenter),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                   color: Palete.green50,
-                                  strokeAlign: StrokeAlign.center),
+                                  strokeAlign: BorderSide.strokeAlignCenter),
                             ),
                           ),
                         ),
@@ -154,13 +154,13 @@ class _RegisterPageState extends State<RegisterPage>
                               borderSide: BorderSide(
                                   color: Palete.green70,
                                   width: 3,
-                                  strokeAlign: StrokeAlign.center),
+                                  strokeAlign: BorderSide.strokeAlignCenter),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                   color: Palete.green50,
-                                  strokeAlign: StrokeAlign.center),
+                                  strokeAlign: BorderSide.strokeAlignCenter),
                             ),
                           ),
                         ),
@@ -193,13 +193,13 @@ class _RegisterPageState extends State<RegisterPage>
                               borderSide: BorderSide(
                                   color: Palete.green70,
                                   width: 3,
-                                  strokeAlign: StrokeAlign.center),
+                                  strokeAlign: BorderSide.strokeAlignCenter),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                   color: Palete.green50,
-                                  strokeAlign: StrokeAlign.center),
+                                  strokeAlign: BorderSide.strokeAlignCenter),
                             ),
                           ),
                           obscureText: true,

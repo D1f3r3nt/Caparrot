@@ -116,13 +116,13 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                             borderSide: BorderSide(
                                 color: Palete.green70,
                                 width: 3,
-                                strokeAlign: StrokeAlign.center),
+                                strokeAlign: BorderSide.strokeAlignCenter),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
                                 color: Palete.green50,
-                                strokeAlign: StrokeAlign.center),
+                                strokeAlign: BorderSide.strokeAlignCenter),
                           ),
                         ),
                       ),
@@ -155,13 +155,13 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                             borderSide: BorderSide(
                                 color: Palete.green70,
                                 width: 3,
-                                strokeAlign: StrokeAlign.center),
+                                strokeAlign: BorderSide.strokeAlignCenter),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
                                 color: Palete.green50,
-                                strokeAlign: StrokeAlign.center),
+                                strokeAlign: BorderSide.strokeAlignCenter),
                           ),
                         ),
                         obscureText: true,
