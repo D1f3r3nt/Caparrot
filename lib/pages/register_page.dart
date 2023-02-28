@@ -114,13 +114,13 @@ class _RegisterPageState extends State<RegisterPage>
                               borderSide: BorderSide(
                                   color: Palete.green70,
                                   width: 3,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                   color: Palete.green50,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                           ),
                         ),
@@ -154,13 +154,13 @@ class _RegisterPageState extends State<RegisterPage>
                               borderSide: BorderSide(
                                   color: Palete.green70,
                                   width: 3,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                   color: Palete.green50,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                           ),
                         ),
@@ -193,13 +193,13 @@ class _RegisterPageState extends State<RegisterPage>
                               borderSide: BorderSide(
                                   color: Palete.green70,
                                   width: 3,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                   color: Palete.green50,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                           ),
                           obscureText: true,
@@ -210,7 +210,7 @@ class _RegisterPageState extends State<RegisterPage>
                         color: Palete.black50,
                         onPressed: _onSingUp,
                         child: const Text(
-                          'Sing up',
+                          'Registre\'t',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,

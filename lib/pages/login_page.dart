@@ -116,13 +116,13 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                             borderSide: BorderSide(
                                 color: Palete.green70,
                                 width: 3,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
                                 color: Palete.green50,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                         ),
                       ),
@@ -155,13 +155,13 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                             borderSide: BorderSide(
                                 color: Palete.green70,
                                 width: 3,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
                                 color: Palete.green50,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                         ),
                         obscureText: true,
@@ -192,7 +192,7 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                       color: Palete.black50,
                       onPressed: _onSubmitLogIn,
                       child: Text(
-                        'Log In',
+                        'Entrar',
                         style: TextStyle(color: Palete.white20, fontSize: 16),
                       ),
                     ),
