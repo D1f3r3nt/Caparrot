@@ -20,7 +20,7 @@ class Gateway extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Palete.green70,
-      body: LoadingPage(),
+      body: const LoadingPage(),
     );
   }
 

@@ -50,7 +50,7 @@ class _RegisterPageState extends State<RegisterPage>
     final authProvider =
         Provider.of<AuthenticationProvider>(context, listen: false);
 
-    void _onSingUp() {
+    void onSingUp() {
       if (_formKey.currentState!.validate()) {
         _formKey.currentState!.save();
         authProvider.emailSingUp(context,
@@ -114,13 +114,13 @@ class _RegisterPageState extends State<RegisterPage>
                               borderSide: BorderSide(
                                   color: Palete.green70,
                                   width: 3,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                   color: Palete.green50,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                           ),
                         ),
@@ -154,13 +154,13 @@ class _RegisterPageState extends State<RegisterPage>
                               borderSide: BorderSide(
                                   color: Palete.green70,
                                   width: 3,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                   color: Palete.green50,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                           ),
                         ),
@@ -193,13 +193,13 @@ class _RegisterPageState extends State<RegisterPage>
                               borderSide: BorderSide(
                                   color: Palete.green70,
                                   width: 3,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                   color: Palete.green50,
-                                  strokeAlign: BorderSide.strokeAlignCenter),
+                                  strokeAlign: StrokeAlign.center),
                             ),
                           ),
                           obscureText: true,
@@ -208,7 +208,7 @@ class _RegisterPageState extends State<RegisterPage>
                       const SizedBox(height: 20),
                       MaterialButton(
                         color: Palete.black50,
-                        onPressed: _onSingUp,
+                        onPressed: onSingUp,
                         child: const Text(
                           'Sing up',
                           style: TextStyle(
@@ -235,15 +235,13 @@ class _RegisterPageState extends State<RegisterPage>
                       const Text(
                         "Ya tens un compte? ",
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.bold
                         ),
                       ),
                       Text(
                         'Inicia sessió',
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Palete.white20,
-                        ),
+                            fontWeight: FontWeight.bold, color: Palete.white20),
                       ),
                     ],
                   ),

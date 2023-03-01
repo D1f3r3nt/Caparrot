@@ -55,7 +55,7 @@ class _SettingsPageState extends State<SettingsPage> {
               style: TextStyle(color: Palete.white90),
             ),
             onPressed: () {
-              if (_controller.text.trim().length > 0) {
+              if (_controller.text.trim().isNotEmpty) {
                 _user.updateDisplayName(_controller.text.trim());
               }
             },

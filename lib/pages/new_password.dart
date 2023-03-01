@@ -76,13 +76,13 @@ class NewPassword extends StatelessWidget {
                             borderSide: BorderSide(
                                 color: Palete.green70,
                                 width: 3,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
                                 color: Palete.green50,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                         ),
                       ),

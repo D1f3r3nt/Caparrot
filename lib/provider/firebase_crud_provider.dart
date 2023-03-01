@@ -1,10 +1,11 @@
 import 'package:caparrot/firebase/database/achievements_db.dart';
 import 'package:caparrot/firebase/database/library_db.dart';
 import 'package:caparrot/firebase/database/users_db.dart';
-import 'package:caparrot/models/head_model.dart';
-import 'package:caparrot/models/library_model.dart';
+
 import 'package:caparrot/models/models.dart';
 import 'package:flutter/material.dart';
+
+import '../models/library_model.dart';
 
 class FirebaseCrudProvider extends ChangeNotifier {
   final AchievementsDb _achievementsDb = AchievementsDb();
