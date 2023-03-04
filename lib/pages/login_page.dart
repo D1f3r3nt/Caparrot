@@ -117,11 +117,13 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                                 color: Palete.green70,
                                 width: 3,
                                 strokeAlign: StrokeAlign.center),
+                                strokeAlign: StrokeAlign.center),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
                                 color: Palete.green50,
+                                strokeAlign: StrokeAlign.center),
                                 strokeAlign: StrokeAlign.center),
                           ),
                         ),
@@ -156,11 +158,13 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                                 color: Palete.green70,
                                 width: 3,
                                 strokeAlign: StrokeAlign.center),
+                                strokeAlign: StrokeAlign.center),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
                                 color: Palete.green50,
+                                strokeAlign: StrokeAlign.center),
                                 strokeAlign: StrokeAlign.center),
                           ),
                         ),
@@ -200,11 +204,10 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                 ),
               ),
               Divider(
-                color: Palete.white20,
-                indent: 10,
-                endIndent: 10,
-                thickness: 1,
-              ),
+                  color: Palete.white20,
+                  indent: 10,
+                  endIndent: 10,
+                  thickness: 1),
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),

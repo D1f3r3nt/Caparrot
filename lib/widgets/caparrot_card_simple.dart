@@ -1,7 +1,6 @@
 import 'package:caparrot/models/head_model.dart';
-import 'package:caparrot/utils/palete.dart';
-import 'package:caparrot/utils/snackbar.dart';
 import 'package:flutter/material.dart';
+import '../utils/utils.dart';
 
 class CapaTag extends StatelessWidget {
   HeadModel model;

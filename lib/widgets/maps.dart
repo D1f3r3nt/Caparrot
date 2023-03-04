@@ -9,7 +9,7 @@ class Maps extends StatefulWidget {
   Position position;
   Set<Marker> markers;
 
-  Maps({
+  Maps({super.key,
     required this.position,
     required this.markers,
   });
@@ -93,7 +93,7 @@ class _MapsState extends State<Maps> {
   }
 
   void listenUbi() {
-    final LocationSettings locationSettings = LocationSettings(
+    const LocationSettings locationSettings = LocationSettings(
       accuracy: LocationAccuracy.high,
       distanceFilter: 20,
     );

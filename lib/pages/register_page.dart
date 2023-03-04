@@ -50,7 +50,7 @@ class _RegisterPageState extends State<RegisterPage>
     final authProvider =
         Provider.of<AuthenticationProvider>(context, listen: false);
 
-    void _onSingUp() {
+    void onSingUp() {
       if (_formKey.currentState!.validate()) {
         _formKey.currentState!.save();
         authProvider.emailSingUp(context,
@@ -208,7 +208,7 @@ class _RegisterPageState extends State<RegisterPage>
                       const SizedBox(height: 20),
                       MaterialButton(
                         color: Palete.black50,
-                        onPressed: _onSingUp,
+                        onPressed: onSingUp,
                         child: const Text(
                           'Registre\'t',
                           style: TextStyle(
@@ -235,15 +235,13 @@ class _RegisterPageState extends State<RegisterPage>
                       const Text(
                         "Ya tens un compte? ",
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.bold
                         ),
                       ),
                       Text(
                         'Inicia sessió',
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Palete.white20,
-                        ),
+                            fontWeight: FontWeight.bold, color: Palete.white20),
                       ),
                     ],
                   ),

@@ -1,7 +1,6 @@
 import 'package:caparrot/models/achievement_model.dart';
 import 'package:caparrot/models/head_model.dart';
 import 'package:caparrot/models/library_model.dart';
-import 'package:caparrot/provider/provider.dart';
 import 'package:caparrot/utils/palete.dart';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:flutter/material.dart';
