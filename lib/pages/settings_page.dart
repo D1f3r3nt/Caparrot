@@ -28,7 +28,7 @@ class _SettingsPageState extends State<SettingsPage> {
     return Scaffold(
       backgroundColor: Palete.green50,
       appBar: AppBar(
-        title: const Text('Ajustaments'),
+        title: const Text('Configuracio'),
         centerTitle: true,
         backgroundColor: Palete.green90,
       ),
@@ -39,7 +39,7 @@ class _SettingsPageState extends State<SettingsPage> {
             child: TextField(
               controller: _controller,
               decoration: InputDecoration(
-                label: const Text('Nickname'),
+                label: const Text('Nom d\'usuari'),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -51,7 +51,7 @@ class _SettingsPageState extends State<SettingsPage> {
           MaterialButton(
             color: Palete.black50,
             child: Text(
-              'Cambiar nickname',
+              'Cambiar nom d\'usuari',
               style: TextStyle(color: Palete.white90),
             ),
             onPressed: () {
@@ -70,7 +70,7 @@ class _SettingsPageState extends State<SettingsPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const Text(
-                "Volumen",
+                "Musica",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Switch(

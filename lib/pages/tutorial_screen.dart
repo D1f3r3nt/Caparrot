@@ -11,36 +11,36 @@ class TutorialScreens extends StatelessWidget {
       body: IntroductionScreen(
           pages: [
             PageViewModel(
-              title: 'Debes de estar en Sa Pobla',
+              title: 'Has de estar a Sa Pobla',
               body:
-                  'Para el uso de esta aplicacion es necesario que estes en Sa Pobla. Ve al ayuntamiento, ahi estara el comienzo de todo',
+                  'Per a l\'ús d\'aquesta aplicació és necessari que estiguis a Sa Pobla. Ves a l\'ajuntament, allà estarà el començament de tot',
               image: buildImage("assets/tutorial/Sa_Pobla.png"),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Ayuntamiento de Sa Pobla',
-              body: 'Para comenzar es necesario dirigirse al ayuntamiento',
+              title: 'Ajuntament de Sa Pobla',
+              body: 'Per a començar és necessari dirigir-se a l\'ajuntament',
               image: buildImage("assets/tutorial/ayuntamiento.jpg"),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Captura de caparrots',
+              title: 'Captura els caparrots',
               body:
-                  'Si encuentras algun caparrot haz click sobre el y contesta la pregunta correctamente para capturarlo',
+                  'Si trobes algun caparrot fes clic sobre l\'i contesta la pregunta correctament per a capturar-ho',
               image: buildImage("assets/markers/grouxo.png"),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Pistas',
+              title: 'Pistes',
               body:
-                  'Ten en cuenta las pistas para encontrar los caparrots, dichas pistas estaran por Sa Pobla',
+                  'Tingues en compte les pistes per a trobar els caparrots, aquestes pistes se\'t proporcioneran una vegada capturis un caparrot',
               image: buildImage("assets/tutorial/papiro.png"),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Obten los todos los caparrots',
+              title: 'Obten tots els caparrots',
               body:
-                  '11 caparrots estan escondidos por Sa Pobla obtenlos todos para ganar',
+                  '11 caparrots estan amagats per Sa Pobla obtenlos tots per a guanyar',
               image: buildImage("assets/tutorial/caparrots.png"),
               decoration: getPageDecoration(),
             ),
@@ -54,10 +54,10 @@ class TutorialScreens extends StatelessWidget {
           showNextButton: true,
           showSkipButton: true,
           isBottomSafeArea: true,
-          skip: const Text("Saltar",
+          skip: const Text("Següent",
               style: TextStyle(fontWeight: FontWeight.w600)),
           next: const Icon(Icons.forward),
-          done: const Text("Estoy listo",
+          done: const Text("Estic llest",
               style: TextStyle(fontWeight: FontWeight.w600)),
           dotsDecorator: getDotsDecorator()),
     );

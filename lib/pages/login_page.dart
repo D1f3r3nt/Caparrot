@@ -191,9 +191,10 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                     MaterialButton(
                       color: Palete.black50,
                       onPressed: _onSubmitLogIn,
-                      child: Text('Log In',
-                          style:
-                              TextStyle(color: Palete.white20, fontSize: 16)),
+                      child: Text(
+                        'Entrar',
+                        style: TextStyle(color: Palete.white20, fontSize: 16),
+                      ),
                     ),
                   ],
                 ),

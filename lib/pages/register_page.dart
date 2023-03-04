@@ -210,7 +210,7 @@ class _RegisterPageState extends State<RegisterPage>
                         color: Palete.black50,
                         onPressed: onSingUp,
                         child: const Text(
-                          'Sing up',
+                          'Registre\'t',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
