@@ -7,16 +7,16 @@
         "markerImage": "grouxo.png",
         "tresD": "grouxo.glb",
         "image": "grouxo.png", 
-        "historia": "Bienvenido joven, supongo que estás aquí para ser el nuevo caparrot… Lamentablemente para ti, no es tarea fácil.Primero deberás encontrar a todos los integrantes, somos 11 contando conmigo. Pero antes de todo deberás responder a una de mis preguntas.",
-        "pregunta": "¿Cuál de estas afirmaciones sobre los Caparrots es verdadera?",
+        "historia": "Benvingut jove, suposo que ets aquí per ser el nou caparrot… Lamentablement per a tu, no és tasca fàcil. Primer hauràs de trobar tots els integrants, som 11 comptant amb mi. Però abans de tot hauràs de respondre una de les meves preguntes.",
+        "pregunta": "Quina afirmació sobre els Caparrots és veritable?",
         "respuestas": [
-            "Somos conocidos por nuestras celebraciones del mes de diciembre",
-            "El Dimoni es un personaje importante de nosotros y representa el bien",
-            "La mayoría de de nuestros trajes están hechos de materiales naturales",
-            "Festejamos únicamente en sa Pobla"
+            "Som coneguts per les nostres celebracions del mes de desembre",
+            "El Dimoni és un personatge important de nosaltres i representa el bé",
+            "La majoria dels nostres vestits estan fets de materials naturals",
+            "Festegem únicament a sa Pobla"
         ],
         "indexRespuesta": 3,
-        "continue": "Veamos si puedes convencer al resto de caparrots, alguien te espera en una plaza en honor a la segunda guerra mundial."
+        "continue": "Vegem si pots convèncer la resta de caparrots, algú t'espera a una plaça en honor a la segona guerra mundial."
     },
     {
         "id": 2,
@@ -26,8 +26,8 @@
         "markerImage": "moro1.png",
         "tresD": "negrita.glb",
         "image": "moro1.png", 
-        "historia": "Bienvenido! ¿Te ha mandado Grouxo a por mi? Eso significa que quieres ser el nuevo Caparrot...",
-        "pregunta": "Veamos…  ¿Ves la plaza que se encuentra justo aquí? ¿Sabrías decirme quién la construyó?",
+        "historia": "Benvingut! T'ha enviat Grouxo a buscar-me? Això vol dir que vols ser el nou Caparrot...",
+        "pregunta": "Vegem… Veus la plaça que es troba just aquí? Sabries dir-me qui la va construir?",
         "respuestas": [
             "Arquitecto Antoni Pons",
             "Grouxo",
@@ -35,7 +35,7 @@
             "Alejandro Palomino"
         ],
         "indexRespuesta": 0,
-        "continue": "Una de mis compañeras te espera en una sala de juegos infantil muy conocida, cómo se llamaba, Jocs…"
+        "continue": "Una de les meves companyes t'espera a una sala de jocs infantil molt coneguda, com es deia, Jocs…"
     },
     {
         "id": 3,
@@ -45,8 +45,8 @@
         "markerImage": "pallaso1.png",
         "tresD": "payaso1.glb",
         "image": "pallaso1.png", 
-        "historia": "Vaya, así que ya has acertado preguntas de otros caparrots… entonces tendré que ponerlo un poco más difícil.",
-        "pregunta": "¿En qué siglo se construyó el oratorio de Crestatx?",
+        "historia": "Vaja, així que ja has encertat preguntes d'altres caparrots… llavors ho hauré de posar una mica més difícil.",
+        "pregunta": "Quin segle es va construir l'oratori de Crestatx?",
         "respuestas": [
             "X",
             "XII",
@@ -54,7 +54,7 @@
             "XVI"
         ],
         "indexRespuesta": 2,
-        "continue": "Hora de seguir con tu búsqueda, recuerdo escuchar a Negreta algo sobre aprender a patinar…"
+        "continue": "Hora de seguir amb la teva cerca, recordo escoltar Negreta alguna cosa sobre aprendre a patinar…"
     },
     {
         "id": 4,
@@ -64,8 +64,8 @@
         "markerImage": "moro2.png",
         "tresD": "negrito.glb",
         "image": "moro2.png", 
-        "historia": "Parece que esto de patinar no es lo mío, me gustaría verte a ti, pero dejemos eso para  otro momento, primero debes centrarte en lo importante.",
-        "pregunta": "¿Qué parque natural se encuentra justo aquí al lado?",
+        "historia": "Sembla que això de patinar no és el meu, m'agradaria veure't a tu, però deixem això per a un altre moment, primer t'has de centrar en l'important.",
+        "pregunta": "Quin parc natural és just aquí al costat?",
         "respuestas": [
             "Parque natural de s’Albufera",
             "Parque natural de Port Aventura",
@@ -73,7 +73,7 @@
             "Parque natural Mondraó"
         ],
         "indexRespuesta": 0,
-        "continue": "Debo seguir practicando, si quieres seguir hablando habla con el Guardia vell, suele encontrarse cerca del cuartel de la policia."
+        "continue": "He de continuar practicant, si vols continuar parlant parla amb el Guàrdia vell, sol trobar-se a prop de la caserna de la policia."
     },
     {
         "id": 5,
@@ -83,16 +83,16 @@
         "markerImage": "guardia.png",
         "tresD": "guardia1.glb",
         "image": "guardia.png", 
-        "historia": "Buenas joven, me encontraba patruyando las calles y he decidido descansar un rato.",
-        "pregunta": "¿Cuál es el propósito principal de la policía?",
+        "historia": "Bona jove, em trobava patruient els carrers i he decidit descansar una estona.",
+        "pregunta": "Quin és el propòsit principal de la policia?",
         "respuestas": [
-            "Proteger del viento",
-            "Cuidar y servir a la población",
-            "Apalear viejitas en manifestaciones",
-            "Patrullar la ciudad"
+            "Protegir del vent",
+            "Cuidar i servir la població",
+            "Apallissar velles en manifestacions",
+            "Patrullar la ciutat"
         ],
         "indexRespuesta": 1,
-        "continue": "Mientras patrullaba he visto a Harpo en la Escuela Infantil, se llama Ei ..."
+        "continue": "Mentre patrullava he vist Harpo a l'Escola Infantil, es diu Ei..."
     },
     {
         "id": 6,
@@ -102,16 +102,16 @@
         "markerImage": "marx2.png",
         "tresD": "harpo.glb",
         "image": "marx2.png", 
-        "historia": "Buenas joven, estaba jugando un rato con los niños",
-        "pregunta": "¿Cuál es mi papel en los caparrots?",
+        "historia": "Bona jove, estava jugant una estona amb els nens",
+        "pregunta": "Quin és el meu paper als caparrots?",
         "respuestas": [
             "Inventor",
-            "Diseñador",
-            "Fabricante",
-            "Vendedor"
+            "Dissenyador",
+            "Fabricant",
+            "Venedor"
         ],
         "indexRespuesta": 0,
-        "continue": "Ahora ves a la guardia civil, alomejor esta el Guardia Jove"
+        "continue": "Ara veus la guàrdia civil, és millor el Guàrdia Jove"
     },
     {
         "id": 7,
@@ -121,16 +121,16 @@
         "markerImage": "guardia2.png",
         "tresD": "guardia2.glb",
         "image": "guardia2.png", 
-        "historia": "Buenas que buen dia que hace",
-        "pregunta": "Seguro que el Guardia vell te ha hecho alguna pregunta sobre la policía, pero no te ha preguntado por nuestra función… sabes cuál es?",
+        "historia": "Bones que bon dia que fa",
+        "pregunta": "Segur que el Guardia vell t'ha fet alguna pregunta sobre la policia, però no t'ha preguntat per la nostra funció… saps quina és?",
         "respuestas": [
-            "Vigilar que no hi hagi cap tipus d’incident durant els balls que realitzen la resta de caparrots",
-            "Vigilar que no hi hagi cap tipus d’incident al poble",
-            "Controlar tempestes per capturar als malechors",
-            "Llevas las banderas los días de celebración"
+            "Vigilar que no hi hagi cap tipus d'incident durant els balls que facin la resta de caparrots",
+            "Vigilar que no hi hagi cap mena d'incident al poble",
+            "Controlar tempestes per capturar els malechors",
+            "Portes les banderes els dies de celebració"
         ],
         "indexRespuesta": 0,
-        "continue": "Hora de ir a ver al payaso, suele estar por la antigua estación de tren, puede ser muy divertido, pero no lo hagas enfadar…"
+        "continue": "Hora d'anar a veure el pallasso, sol estar per l'antiga estació de tren, pot ser molt divertit, però no ho facis enfadar…"
     },
     {
         "id": 8,
@@ -140,8 +140,8 @@
         "markerImage": "pallaso2.png",
         "tresD": "payaso2.glb",
         "image": "pallaso2.png", 
-        "historia": "Oh vaya, me has encontrado… no suelo tener muchas visitas, ya veo, crees que sabes mucho sobre nosotros jejejeje.",
-        "pregunta": "¿En qué año nos incorporamos a la revetla de Sant Antoni?",
+        "historia": "Oh vaja, m'has trobat… no acostumo a tenir gaires visites, ja veig, creus que saps molt sobre nosaltres jejejeje.",
+        "pregunta": "Quin any ens incorporem a la revetla de Sant Antoni?",
         "respuestas": [
             "1952",
             "1942",
@@ -149,7 +149,7 @@
             "1990"
         ],
         "indexRespuesta": 0,
-        "continue": "Ah, si.. el último caparrot que recuerdo es chico, me dijo algo sobre la escuela graduada… con lo que le gusta divertirse a este chico jejejeje"
+        "continue": "Ah, si.. el darrer caparrot que recordo és noi, em va dir alguna cosa sobre l'escola graduada… de manera que li agrada divertir-se a aquest noi jejejeje"
     },
     {
         "id": 9,
@@ -159,8 +159,8 @@
         "markerImage": "marx1.png",
         "tresD": "chicco.glb",
         "image": "marx1.png", 
-        "historia": "Supongo que no esperabas encontrarme aquí… bueno, digamos que no todo puede ser fiesta, yo también tengo obligaciones…",
-        "pregunta": "¿Cuál de las siguientes celebraciones es una parte importante de la cultura de Sa Pobla?",
+        "historia": "Suposo que no esperaves trobar-me aquí… bé, diguem que no tot pot ser festa, jo també tinc obligacions…",
+        "pregunta": "Quina de les celebracions següents és una part important de la cultura de Sa Pobla?",
         "respuestas": [
             "Las Fallas",
             "La Tamborada",
@@ -168,7 +168,7 @@
             "El Carnaval del Río"
         ],
         "indexRespuesta": 1,
-        "continue": "Deberías hablar con Gepeto, se encuentra en la entrada al pueblo, aquella con un cartel grande estilo Hollywood"
+        "continue": "Hauries de parlar amb Gepeto, es troba a l'entrada al poble, aquella amb un cartell gran estil Hollywood"
     },
     {
         "id": 10,
@@ -178,16 +178,16 @@
         "markerImage": "jepeto.png",
         "tresD": "jepeto.glb",
         "image": "jepeto.png", 
-        "historia": "Que buen cartel, se parece al de Hollywood, aunque creo que no lo he visto nunca...",
-        "pregunta": "Bienvenidos! Así que Chico os ha hablado de la tamborada… estoy muy orgulloso de participar en esas emblemáticas festividades.Sabrías decirme cuantos dias dura exactamente?",
+        "historia": "Quin bon cartell, s'assembla al de Hollywood, encara que crec que no ho he vist mai...",
+        "pregunta": "Benvinguts! Així que Chico us ha parlat de la tamborada… estic molt orgullós de participar en aquestes emblemàtiques festivitats. Sabries dir-me quants dies dura exactament?",
         "respuestas": [
-            "Un día entero",
+            "Un dia sencer",
             "Dos Dias",
             "Tres días",
             "Toda una semana"
         ],
         "indexRespuesta": 1,
-        "continue": "Deberías hablar con Turc, siempre está a las afueras, en otra rotonda como esta, no muy lejos de Negreta, se que tenia un Bazar Chino cerca"
+        "continue": "Hauries de parlar amb Turc, sempre és als afores, en una altra rotonda com aquesta, no gaire lluny de Negreta, sé que tenia un Basar Xinès a prop"
     },
     {
         "id": 11,
@@ -197,8 +197,8 @@
         "markerImage": "turco.png",
         "tresD": "turco.glb",
         "image": "turco.png", 
-        "historia": "Si has seguido los pasos de mis compañeros, soy el último caparrot que encontrarás, ¿te gusta mi traje tradicional? Vale, supongo que has venido hasta aquí con un motivo, pero mi pregunta no tiene nada que ver con las demás, hablemos de gastronomía.",
-        "pregunta": "Cual es el plato más típico de la cocina de sa pobla",
+        "historia": "Si heu seguit els passos dels meus companys, sóc l'últim caparrot que trobareu, t'agrada el meu vestit tradicional? D'acord, suposo que has vingut fins aquí amb un motiu, però la meva pregunta no té res a veure amb les altres, parlem de gastronomia.",
+        "pregunta": "Quin és el plat més típic de la cuina de sa pobla",
         "respuestas": [
             "Paella",
             "Tumbet",
@@ -206,6 +206,6 @@
             "Arroz Brut"
         ],
         "indexRespuesta": 1,
-        "continue": "Gracias por jugar con nosotros, si no has convencido a alguien ves a buscarlo y convencelo"
+        "continue": "Gràcies per jugar amb nosaltres, si no has convençut algú veus a buscar-lo i convenç-ho"
     }
 ]
