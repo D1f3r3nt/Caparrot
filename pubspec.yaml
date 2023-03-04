@@ -46,6 +46,8 @@ flutter:
     - assets/modelos3d/
     - assets/tutorial/
     - assets/caparrots/
+    - assets/logros/
+    - assets/biblioteca/
     - data/
   # To add custom fonts to your application:
   # fonts:

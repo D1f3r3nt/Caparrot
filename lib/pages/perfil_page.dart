@@ -1,3 +1,4 @@
+import 'package:caparrot/provider/achievements_provider.dart';
 import 'package:caparrot/utils/palete.dart';
 import 'package:caparrot/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,7 +13,10 @@ class ProfileScreen extends StatelessWidget {
     final authProvider =
         Provider.of<AuthenticationProvider>(context, listen: false);
     final firebaseCrudProvider = Provider.of<FirebaseCrudProvider>(context);
-    firebaseCrudProvider.getAchievements();
+    final achievementsProvider = Provider.of<AchievementsProvider>(context);
+    if (achievementsProvider.achievements.isEmpty) {
+      achievementsProvider.getData();
+    }
 
     final String imageUrl = (_user != null)
         ? _user.photoURL ??
@@ -89,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Wrap(
                   alignment: WrapAlignment.center,
                   spacing: 20,
-                  children: firebaseCrudProvider.achievemets
+                  children: achievementsProvider.achievements
                       .map((achievements) => CardLogro(
                             model: achievements,
                             has: (firebaseCrudProvider.user == null)

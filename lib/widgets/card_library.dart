@@ -29,7 +29,7 @@ class CardLibrary extends StatelessWidget {
               )
             ],
             image: DecorationImage(
-              image: NetworkImage(model.image),
+              image: AssetImage('assets/biblioteca/${model.image}'),
               fit: BoxFit.cover,
               opacity: 0.6,
             ),

@@ -26,7 +26,7 @@ class CardLogro extends StatelessWidget {
               colorFilter: (has)
                   ? null
                   : const ColorFilter.mode(Colors.grey, BlendMode.saturation),
-              image: NetworkImage(model.image),
+              image: AssetImage('assets/logros/${model.image}'),
             ),
           ),
         ),

@@ -1,5 +1,7 @@
 import 'package:caparrot/main.dart';
+import 'package:caparrot/provider/achievements_provider.dart';
 import 'package:caparrot/provider/head_provider.dart';
+import 'package:caparrot/provider/library_provider.dart';
 import 'package:caparrot/provider/provider.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +18,8 @@ class AppState extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => FirebaseCrudProvider()),
         ChangeNotifierProvider(create: (_) => MarkerProvider()),
         ChangeNotifierProvider(create: (_) => HeadProvider()),
+        ChangeNotifierProvider(create: (_) => LibraryProvider()),
+        ChangeNotifierProvider(create: (_) => AchievementsProvider()),
       ],
       child: const MyApp(),
     );
