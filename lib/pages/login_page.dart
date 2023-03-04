@@ -116,13 +116,13 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                             borderSide: BorderSide(
                                 color: Palete.green70,
                                 width: 3,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
                                 color: Palete.green50,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                         ),
                       ),
@@ -155,13 +155,13 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                             borderSide: BorderSide(
                                 color: Palete.green70,
                                 width: 3,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
                                 color: Palete.green50,
-                                strokeAlign: BorderSide.strokeAlignCenter),
+                                strokeAlign: StrokeAlign.center),
                           ),
                         ),
                         obscureText: true,
@@ -191,20 +191,18 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                     MaterialButton(
                       color: Palete.black50,
                       onPressed: _onSubmitLogIn,
-                      child: Text(
-                        'Log In',
-                        style: TextStyle(color: Palete.white20, fontSize: 16),
-                      ),
+                      child: Text('Log In',
+                          style:
+                              TextStyle(color: Palete.white20, fontSize: 16)),
                     ),
                   ],
                 ),
               ),
               Divider(
-                color: Palete.white20,
-                indent: 10,
-                endIndent: 10,
-                thickness: 1,
-              ),
+                  color: Palete.white20,
+                  indent: 10,
+                  endIndent: 10,
+                  thickness: 1),
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),

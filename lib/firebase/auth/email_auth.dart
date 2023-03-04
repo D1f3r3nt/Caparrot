@@ -23,9 +23,7 @@ class EmailAuth {
       } else if (e.code == 'email-already-in-use') {
         Snackbar.errorSnackbar(context, 'Aquest email ya existeix');
       }
-    } catch (e) {
-      print(e);
-    }
+    } catch (e) {}
   }
 
   Future<void> logIn(
@@ -49,16 +47,13 @@ class EmailAuth {
     try {
       await FirebaseAuth.instance.signOut();
     } catch (e) {
-      print('Email error: $e');
     }
   }
 
-  Future<void> newPassword(BuildContext context,
-      {required String email}) async {
+  Future<void> newPassword(BuildContext context, {required String email}) async {
+
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-    Snackbar.correctSnackbar(
-      context,
-      'Se ha enviado un email con los pasos a seguir, revise su bandeja de entrada',
-    );
+    Snackbar.correctSnackbar(context,
+        'Se ha enviado un email con los pasos a seguir, revise su bandeja de entrada');
   }
 }
