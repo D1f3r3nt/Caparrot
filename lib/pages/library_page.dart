@@ -1,3 +1,4 @@
+import 'package:caparrot/provider/library_provider.dart';
 import 'package:caparrot/provider/provider.dart';
 import 'package:caparrot/utils/utils.dart';
 import 'package:caparrot/widgets/widgets.dart';
@@ -8,8 +9,10 @@ class LibraryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final firebaseCrudProvider = Provider.of<FirebaseCrudProvider>(context);
-    firebaseCrudProvider.getLibrarys();
+    final libraryProvider = Provider.of<LibraryProvider>(context);
+    if (libraryProvider.libraries.isEmpty) {
+      libraryProvider.getData();
+    }
 
     return Scaffold(
       backgroundColor: Palete.green50,
@@ -27,7 +30,7 @@ class LibraryPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView(
-          children: firebaseCrudProvider.librarys
+          children: libraryProvider.libraries
               .map((library) => CardLibrary(
                     model: library,
                   ))

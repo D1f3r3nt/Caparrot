@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "image": "baile.jpg",
+        "title": "Música mallorquina",
+        "description": "El ritme mallorquí és un estil únic de música folklòrica que es toca a Sa Pobla i a tota l'illa de Mallorca. La música s'ha transmès de generació en generació i és una manera important de preservar les tradicions i la identitat cultural local."
+    },
+    {
+        "id": 2,
+        "image": "artesania.jpg",
+        "title": "Artesania de Sa Pobla",
+        "description": "L'artesania és un aspecte important de la cultura de Sa Pobla, amb artesans locals creant objectes de ceràmica, tèxtils i altres materials."
+    },
+    {
+        "id": 3,
+        "image": "arquitectura.jpeg",
+        "title": "Arquitectura civil",
+        "description": "Els edificis més importants que podem trobar al municipi de Sa Pobla són les possessions de la ruralia i les cases senyorials de lʻinterior del poble.  Aquestes edificacions escenifiquen el que fou el lloc de residència de les classes benestants del poble, segles enrere. D'aquesta manera, les possessions  i les cases senyorials són un element clau per poder comprendre la història i la cultura de Mallorca."
+    },
+    {
+        "id": 4,
+        "image": "agricultura.jpg",
+        "title": "L'agricultura",
+        "description": "L'agricultura és un aspecte important de l'economia i la cultura de Sa Pobla, amb la localitat sent coneguda pels seus productes agrícoles, com ara patates, tomàquets i oli d'oliva."
+    },
+    {
+        "id": 5,
+        "image": "arquitecturareligiosa.jpeg",
+        "title": "Arquitectura religiosa",
+        "description": "El municipi de sa Pobla hi ha un total de 15 elements arquitectònics religiosos protegits pel seu valor històric i artístic.  Aquests elements religiosos són de diversa categoria: petits oratoris rurals ubicats en possessions, el cementiri municipal o l´Església Parroquial de Sant Antoni Abat. Aquestes construccions han aconseguit romandre durant segles, més o menys transformades,  gràcies al fet que han tingut un ús continuat en el temps i han estat llocs de devoció. Dins del nucli urbà, molt a prop de la Plaça Major  es troba la joia del poble, lʻEsglésia Parroquial de Sant Antoni Abat. A part de l´Església, també es pot visitar el Cementeri Municipal, l´Oratori de Crestatx i totes les creus de terme del municipi."
+    },
+    {
+        "id": 6,
+        "image": "albufera_1.jpg",
+        "title": "Parc Natural de s`Albufera de Mallorca",
+        "description": "Al nostre municipi es troba el Parc Natural de s`Albufera de Mallorca. Aquest parc és la zona húmeda més extensa de les Illes Balears i esdevé una zona d'especial protecció per a les aus. Aquesta zona húmida sempre ha estat molt important per a sa Pobla, ja que arribà a ser la finca de regadí més gran d'Europa."
+    },
+    {
+        "id": 7,
+        "image": "festamajor.jpg",
+        "title": "Festa major",
+        "description": "La Festa Major és la festa més important de Sa Pobla, celebrada en honor de Sant Domingo i la Mare de Déu de lʻEsperança. La festa inclou desfilades, música, balls i altres esdeveniments que celebren la història i la cultura de la localitat."
+    }
+]

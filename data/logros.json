@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "image": "1caparrot.png",
+        "title": "Primer caparrot",
+        "description": "Obtingues el teu primer caparrot"
+    },
+    {
+        "id": 2,
+        "image": "5caparrots.png",
+        "title": "5 caparrots",
+        "description": "Obtingues 5 caparrots mentre descobreixes Sa Pobla"
+    },
+    {
+        "id": 3,
+        "image": "11caparrots.png",
+        "title": "Obtingueu tots els caparrots",
+        "description": "Obtingueu tots els caparrots que existeixen mentre esteu esbrinant més de Sa Pobla"
+    },
+    {
+        "id": 4,
+        "image": "1biblioteca.png",
+        "title": "Mi primera historia",
+        "description": "He leido mi primera historia de la biblioteca"
+    },
+    {
+        "id": 5,
+        "image": "5biblioteca.png",
+        "title": "Varias historias",
+        "description": "Me empiezan a gustar las historias de la biblioteca"
+    },
+    {
+        "id": 6,
+        "image": "7biblioteca.png",
+        "title": "Todas las historias",
+        "description": "Me encantan todas las historias de la biblioteca"
+    },
+    {
+        "id": 7,
+        "image": "Fin.png",
+        "title": "Fin del juego",
+        "description": "He obtenido todos los recursos"
+    }
+]

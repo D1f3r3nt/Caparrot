@@ -60,35 +60,31 @@ void popUpLibrary(BuildContext context, LibraryModel model) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return ListView(
-        children: [
-          AlertDialog(
-            backgroundColor: Palete.white90,
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  model.title,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Palete.black90,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  model.description,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    color: Palete.black90,
-                    fontSize: 15,
-                  ),
-                ),
-              ],
+      return AlertDialog(
+        backgroundColor: Palete.white90,
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              model.title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Palete.black90,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-        ],
+            const SizedBox(height: 20),
+            Text(
+              model.description,
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                color: Palete.black90,
+                fontSize: 15,
+              ),
+            ),
+          ],
+        ),
       );
     },
   );
